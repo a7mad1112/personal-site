@@ -3,7 +3,7 @@ import Button from "../ui/Button.jsx";
 import { socials } from "../../data/socials.js";
 import Waves from "../ui/Waves.jsx";
 import ShinyText from "../ui/ShinyText.jsx";
-
+import TextType from "../ui/TextType.jsx";
 export default function Hero() {
   return (
     <section
@@ -35,14 +35,28 @@ export default function Hero() {
         <div className="space-y-5">
           <ShinyText
             text="Welcome to my world"
-            speed={10}
+            speed={5}
             className="text-base md:text-lg lg:text-xl font-medium mb-0"
             baseClass="text-[var(--muted)]"
           />
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
             Hello I’m{" "}
-            <span className="text-[var(--accent)]">Ahmed Alawneh</span>,<br />A
-            Front End Developer.
+            <span className="text-[var(--accent)]">Ahmed Alawneh</span>,<br />
+            <TextType
+              text={[
+                "Front End Developer",
+                "I build beautiful UIs",
+                "Clean code, modern design",
+              ]}
+              typingSpeed={75}
+              deletingSpeed={40}
+              pauseDuration={1500}
+              showCursor={true}
+              startOnVisible={true}
+              cursorCharacter="|"
+              className="text-[var(--accent)] text-2xl lg:text-3xl"
+              // textColors={["#fff", "var(--accent)", "#9ca3af"]}
+            />
           </h1>
           <p className="text-[var(--muted)] max-w-xl">
             I create fast, sleek front-end experiences. Let’s build something

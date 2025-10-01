@@ -27,7 +27,7 @@ const ShinyText = ({
         style={{
           backgroundImage:
             "linear-gradient(120deg, rgba(255,255,255,0) 45%, var(--accent) 50%, rgba(255,255,255,0) 55%)",
-          backgroundSize: "400% 100%",
+          backgroundSize: "200% 100%",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           animationDuration,
