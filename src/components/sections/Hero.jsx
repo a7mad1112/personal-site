@@ -74,11 +74,19 @@ export default function Hero() {
         </div>
 
         {/* Right image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center relative">
+          {/* Rotating background */}
           <img
-            src="me.svg"
+            src="rotate.png"
+            alt="Rotating shape"
+            className="absolute w-[20rem] lg:w-[24rem] xl:w-[28rem] animate-[spin-slow_20s_linear_infinite]"
+          />
+
+          {/* Profile image */}
+          <img
+            src="me.jpg"
             alt="Ahmed"
-            className="object-contain w-64 lg:w-80 xl:w-[22rem]"
+            className="relative object-contain w-64 lg:w-80 xl:w-[22rem]"
           />
         </div>
       </Container>
