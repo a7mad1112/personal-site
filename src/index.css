@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0f0f0f;
+  --bg: #191919;
   --surface: #151515;
   --accent: #ff6a00;
   --accent-2: #ff914d;
@@ -9,3 +9,24 @@
   --border: rgba(255, 255, 255, 0.08);
 }
 
+.active-link {
+  position: relative;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(-70% + 2px);
+  width: 120%;
+  height: 2px;
+  background-color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .active-link::after {
+    width: 150%;
+    bottom: -75%;
+  }
+}
