@@ -4,11 +4,18 @@ import { socials } from "../../data/socials.js";
 
 export default function Hero() {
   return (
-    <section id="home" className="py-20">
+    <section
+      id="home"
+      // full height minus navbar height dynamically
+      className="min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] flex items-center"
+    >
       <Container className="grid md:grid-cols-2 items-center gap-10">
+        {/* Left text content */}
         <div className="space-y-5">
-          <p className="text-sm text-[var(--muted)]">welcome to my world</p>
-          <h1 className="text-4xl font-bold leading-tight">
+          <p className="text-sm text-[var(--muted)] mb-0">
+            Welcome to my world
+          </p>
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
             Hello I’m{" "}
             <span className="text-[var(--accent)]">Ahmed Alawneh</span>,<br />A
             Front End Developer.
@@ -19,8 +26,14 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button href="#contact">Let’s Work Together</Button>
-            <Button href="#portfolio" variant="outline">
-              Portfolio
+            <Button
+              as="a"
+              href={import.meta.env.BASE_URL + "AhmedAlawnehResume.pdf"}
+              download="AhmedAlawnehResume.pdf"
+              rel="noopener noreferrer"
+              variant="outline"
+            >
+              Download CV
             </Button>
           </div>
           <div className="flex items-center gap-4 pt-2">
@@ -38,12 +51,9 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Right image */}
         <div className="flex justify-center">
-          <img
-            src="/assets/avatar.png"
-            alt="Ahmed"
-            className="size-60 rounded-full object-cover ring-4 ring-[var(--accent)]"
-          />
+          <img src="me.svg" alt="Ahmed" className="object-contain" />
         </div>
       </Container>
     </section>

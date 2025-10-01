@@ -71,7 +71,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA Button — hide until lg to avoid crowding at ~860px */}
         <div className="hidden lg:block">
           <Button href="#contact" onClick={(e) => handleClick(e, "contact")}>
             Hire Me
