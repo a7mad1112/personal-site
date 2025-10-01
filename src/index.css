@@ -30,3 +30,39 @@
     bottom: -75%;
   }
 }
+
+/* --- waves animation --- */
+@keyframes wave-dash {
+  to {
+    stroke-dashoffset: -1200;
+  }
+}
+@keyframes wave-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* apply to the elements that actually have the class */
+.waves-anim {
+  animation: wave-dash 12s linear infinite;
+  /* ensure we start from a defined offset so you can see movement immediately */
+  stroke-dashoffset: 0;
+}
+.waves-float {
+  animation: wave-float 8s ease-in-out infinite;
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .waves-anim,
+  .waves-float {
+    animation: none !important;
+  }
+}
