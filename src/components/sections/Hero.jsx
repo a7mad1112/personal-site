@@ -2,6 +2,7 @@ import Container from "../layout/Container.jsx";
 import Button from "../ui/Button.jsx";
 import { socials } from "../../data/socials.js";
 import Waves from "../ui/Waves.jsx";
+import ShinyText from "../ui/ShinyText.jsx";
 
 export default function Hero() {
   return (
@@ -32,9 +33,12 @@ export default function Hero() {
       <Container className="relative z-10 grid md:grid-cols-2 items-center gap-10">
         {/* Left text content */}
         <div className="space-y-5">
-          <p className="text-sm text-[var(--muted)] mb-0">
-            Welcome to my world
-          </p>
+          <ShinyText
+            text="Welcome to my world"
+            speed={10}
+            className="text-base md:text-lg lg:text-xl font-medium mb-0"
+            baseClass="text-[var(--muted)]"
+          />
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
             Hello I’m{" "}
             <span className="text-[var(--accent)]">Ahmed Alawneh</span>,<br />A
