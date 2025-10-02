@@ -34,7 +34,7 @@ export default function App() {
         <Testimonials />
         <Contact />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

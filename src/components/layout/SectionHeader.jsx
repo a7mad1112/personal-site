@@ -9,7 +9,7 @@ export default function SectionHeader({
   return (
     <div id={id} className={`${alignClass} mb-10`}>
       {kicker && (
-        <p className="text-[var(--accent)] uppercase tracking-widest text-xs">
+        <p className="text-[var(--accent)] uppercase tracking-widest text-sm">
           {kicker}
         </p>
       )}
