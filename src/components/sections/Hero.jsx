@@ -4,6 +4,8 @@ import { socials } from "../../data/socials.js";
 import Waves from "../ui/Waves.jsx";
 import ShinyText from "../ui/ShinyText.jsx";
 import TextType from "../ui/TextType.jsx";
+import ProfileCard from "../ui/profileCard/ProfileCard.jsx";
+import { smoothScrollTo } from "../../utils/scroll.js";
 export default function Hero() {
   return (
     <section
@@ -90,13 +92,39 @@ export default function Hero() {
             ))}
           </div>
         </div>
-
-        {/* Right image */}
-        <div className="flex justify-center">
-          <img
-            src="me.svg"
-            alt="Ahmed"
-            className="object-contain w-64 lg:w-80 xl:w-[22rem]"
+        {/* Right profile card */}
+        <div className="relative z-10 flex justify-center md:justify-center lg:justify-end">
+          <ProfileCard
+            // content
+            name="Ahmed Alawneh"
+            title="Front End Developer"
+            handle="a7mad1112"
+            status="Available"
+            contactText="Hire Me"
+            avatarUrl="me.svg"
+            miniAvatarUrl="me.svg"
+            // behavior
+            showUserInfo
+            enableTilt
+            enableMobileTilt={false}
+            onContactClick={() => {
+              const target = document.getElementById("contact");
+              if (target) smoothScrollTo(target.offsetTop, 1000, 70);
+            }}
+            // style
+            showBehindGradient={false}
+            innerGradient="none"
+            className={[
+              "rounded-2xl",
+              "border-[var(--border)]",
+              "transition-colors duration-300",
+              "focus-within:border-[var(--accent)] hover:border-[var(--accent)]",
+              // responsive safe sizing:
+              "w-full max-w-[18rem]",
+              "sm:max-w-[20rem]",
+              "md:max-w-[22rem]",
+              "lg:max-w-[24rem]",
+            ].join(" ")}
           />
         </div>
       </Container>
