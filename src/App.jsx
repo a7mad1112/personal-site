@@ -4,7 +4,7 @@ import Footer from "./components/layout/Footer.jsx";
 import Hero from "./components/sections/Hero.jsx";
 import TechStack from "./components/sections/TechStack.jsx";
 import Services from "./components/sections/Services.jsx";
-import Projects from "./components/sections/Projects.jsx";
+import SeniorProject from "./components/sections/SeniorProject.jsx";
 import Testimonials from "./components/sections/Testimonials.jsx";
 import Contact from "./components/sections/Contact.jsx";
 
@@ -30,7 +30,7 @@ export default function App() {
         <Hero />
         <TechStack />
         <Services />
-        <Projects />
+        <SeniorProject />
         <Testimonials />
         <Contact />
       </main>
