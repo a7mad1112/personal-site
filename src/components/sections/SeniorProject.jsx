@@ -1,11 +1,34 @@
-// src/components/sections/SeniorProject.jsx
+import { motion, useReducedMotion } from "framer-motion";
 import Container from "../layout/Container.jsx";
 import SectionHeader from "../layout/SectionHeader.jsx";
 import { projects } from "../../data/projects.js";
 
 export default function SeniorProject() {
   const senior = projects.senior?.[0];
+  const rm = useReducedMotion();
   if (!senior) return null;
+  const card = {
+    hidden: { opacity: 0, y: rm ? 0 : 18 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+  const cascade = (delay = 0.1) => ({
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: rm ? 0 : 0.06,
+        delayChildren: rm ? 0 : delay,
+      },
+    },
+  });
+  const item = {
+    hidden: { opacity: 0, y: rm ? 0 : 8 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+  };
 
   return (
     <section id="senior-project" className="py-20">
@@ -15,23 +38,32 @@ export default function SeniorProject() {
           title="Jawed AI — Intelligent Quran Recitation Feedback"
           subtitle="A detailed look at my graduation project"
         />
-
-        {/* Card */}
-        <div
+        <motion.div
           className="
             mt-10 grid lg:grid-cols-[1.1fr_1.4fr] gap-8
             rounded-3xl bg-[var(--surface)] border border-[var(--border)]
             p-6 md:p-8 lg:p-10
           "
+          variants={card}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-15% 0px" }}
         >
-          {/* Cover image */}
-          <div className="order-1">
-            <div
-              className="
-                relative overflow-hidden rounded-2xl
-                border border-[var(--border)]
-                bg-[#191919]
-              "
+          <motion.div
+            className="order-1"
+            variants={cascade(0.15)}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div
+              className="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[#191919]"
+              whileHover={rm ? {} : { y: -2, scale: 1.01 }}
+              transition={{
+                type: "spring",
+                stiffness: 220,
+                damping: 18,
+                mass: 0.6,
+              }}
             >
               <img
                 src={senior.image}
@@ -39,9 +71,12 @@ export default function SeniorProject() {
                 className="w-full h-auto object-contain"
                 loading="lazy"
               />
-            </div>
-            {/* Small tag/date row */}
-            <div className="mt-4 flex flex-wrap items-center gap-3 text-xs">
+            </motion.div>
+
+            <motion.div
+              className="mt-4 flex flex-wrap items-center gap-3 text-xs"
+              variants={item}
+            >
               {senior.tag && (
                 <span className="inline-flex items-center rounded-full border border-[var(--border)] px-3 py-1 text-[var(--muted)]">
                   {senior.tag}
@@ -52,44 +87,56 @@ export default function SeniorProject() {
                   {senior.date}
                 </span>
               )}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Content */}
-          <div className="order-2 space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold">{senior.title}</h2>
+          <motion.div
+            className="order-2 space-y-6"
+            variants={cascade(0.2)}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h2
+              className="text-2xl md:text-3xl font-bold"
+              variants={item}
+            >
+              {senior.title}
+            </motion.h2>
 
-            <p className="text-[var(--muted)] leading-relaxed whitespace-pre-line">
+            <motion.p
+              className="text-[var(--muted)] leading-relaxed whitespace-pre-line"
+              variants={item}
+            >
               {senior.description.trim()}
-            </p>
+            </motion.p>
 
-            {/* Technologies */}
             {senior.technologies?.length > 0 && (
-              <div>
+              <motion.div variants={item}>
                 <h3 className="text-lg font-semibold mb-3 text-white">
                   Technologies Used
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {senior.technologies.map((tech) => (
-                    <span
+                    <motion.span
                       key={tech}
-                      className="
-                        inline-flex items-center rounded-full
-                        border border-[var(--border)]
-                        bg-[#292a2d] text-white/90
-                        px-3 py-1 text-sm
-                      "
+                      className="inline-flex items-center rounded-full border border-[var(--border)] bg-[#292a2d] text-white/90 px-3 py-1 text-sm"
+                      whileHover={rm ? {} : { scale: 1.04 }}
+                      whileTap={rm ? {} : { scale: 0.98 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 18,
+                      }}
                     >
                       {tech}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             )}
 
-            {/* Team */}
             {senior.team?.length > 0 && (
-              <div className="grid sm:grid-cols-2 gap-6">
+              <motion.div className="grid sm:grid-cols-2 gap-6" variants={item}>
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-white">
                     Team Members
@@ -98,11 +145,7 @@ export default function SeniorProject() {
                     {senior.team.map((m) => (
                       <span
                         key={m.name}
-                        className="
-                          inline-flex items-center rounded-full
-                          border border-[var(--border)]
-                          px-3 py-1 text-sm text-[var(--muted)]
-                        "
+                        className="inline-flex items-center rounded-full border border-[var(--border)] px-3 py-1 text-sm text-[var(--muted)]"
                       >
                         {m.name}
                       </span>
@@ -110,7 +153,6 @@ export default function SeniorProject() {
                   </div>
                 </div>
 
-                {/* Supervisors */}
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-white">
                     Supervisors
@@ -119,51 +161,59 @@ export default function SeniorProject() {
                     {senior.supervisors.map((s) => (
                       <span
                         key={s}
-                        className="
-                          inline-flex items-center rounded-full
-                          border border-[var(--border)]
-                          px-3 py-1 text-sm text-[var(--muted)]
-                        "
+                        className="inline-flex items-center rounded-full border border-[var(--border)] px-3 py-1 text-sm text-[var(--muted)]"
                       >
                         {s}
                       </span>
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             )}
 
-            {/* Achievements */}
             {senior.achievements?.current?.length > 0 && (
-              <div className="grid lg:grid-cols-2 gap-6">
+              <motion.div className="grid lg:grid-cols-2 gap-6" variants={item}>
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-white">
                     Achievements / Progress
                   </h3>
-                  <ul className="list-disc list-inside space-y-1 text-white/90">
+                  <motion.ul
+                    className="list-disc list-inside space-y-1 text-white/90"
+                    variants={cascade(0.05)}
+                    initial="hidden"
+                    animate="visible"
+                  >
                     {senior.achievements.current.map((a, idx) => (
-                      <li key={idx}>{a}</li>
+                      <motion.li key={idx} variants={item}>
+                        {a}
+                      </motion.li>
                     ))}
-                  </ul>
+                  </motion.ul>
                 </div>
 
-                {/* Next milestones (if provided) */}
                 {senior.achievements.nextMilestones?.length > 0 && (
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-white">
                       Next Milestones
                     </h3>
-                    <ul className="list-disc list-inside space-y-1 text-white/90">
+                    <motion.ul
+                      className="list-disc list-inside space-y-1 text-white/90"
+                      variants={cascade(0.05)}
+                      initial="hidden"
+                      animate="visible"
+                    >
                       {senior.achievements.nextMilestones.map((m, idx) => (
-                        <li key={idx}>{m}</li>
+                        <motion.li key={idx} variants={item}>
+                          {m}
+                        </motion.li>
                       ))}
-                    </ul>
+                    </motion.ul>
                   </div>
                 )}
-              </div>
+              </motion.div>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );
