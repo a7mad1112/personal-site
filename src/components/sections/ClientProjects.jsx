@@ -7,7 +7,7 @@ export default function ClientProjects() {
   if (!clients.length) return null;
 
   return (
-    <section id="client-projects" className="py-20">
+    <section id="projects" className="py-20">
       <Container>
         <SectionHeader
           kicker="Client Projects"
