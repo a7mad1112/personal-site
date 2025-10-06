@@ -7,6 +7,7 @@ import Services from "./components/sections/Services.jsx";
 import SeniorProject from "./components/sections/SeniorProject.jsx";
 import Testimonials from "./components/sections/Testimonials.jsx";
 import Contact from "./components/sections/Contact.jsx";
+import ClientProjects from "./components/sections/ClientProjects.jsx";
 
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach((link) => {
@@ -30,6 +31,7 @@ export default function App() {
         <Hero />
         <TechStack />
         <Services />
+        <ClientProjects />
         <SeniorProject />
         <Testimonials />
         <Contact />
