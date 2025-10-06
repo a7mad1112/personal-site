@@ -22,9 +22,8 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="relative overflow-hidden py-20" // <-- key fix
+      className="relative overflow-hidden py-24" 
     >
-      {/* Background lines anchored to this section */}
       <AnimatedSvgLines observeRef={sectionRef} opacity={0.2} duration={1600} />
 
       {/* Content above background */}
