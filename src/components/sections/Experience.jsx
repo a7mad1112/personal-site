@@ -99,7 +99,6 @@ const ExperienceItem = ({ item, index }) => {
 export default function Experience() {
   return (
     <section id="experience" className="relative py-16">
-      {/* خلفية خفيفة جداً بتموّج ناعم */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 opacity-20"
