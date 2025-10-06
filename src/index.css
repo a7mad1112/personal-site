@@ -105,23 +105,3 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-/* يرسم كل الخطوط معًا من اليسار لليمين */
-.svg-draw path {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  transition: stroke-dashoffset 1.6s ease-out;
-}
-
-/* عندما نضيف .animate تنطلق الرسمة */
-.svg-draw.animate path {
-  stroke-dashoffset: 0;
-}
-
-/* احترام تفضيل تقليل الحركة */
-@media (prefers-reduced-motion: reduce) {
-  .svg-draw path {
-    transition: none;
-    stroke-dashoffset: 0;
-  }
-}
