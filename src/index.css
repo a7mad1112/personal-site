@@ -105,3 +105,63 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+/* profile card */
+.pc-theme-orng {
+  --card-radius: 20px;
+}
+
+.pc-theme-orng .pc-card {
+  height: 520px;
+  max-height: 520px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 0 1px rgba(255, 145, 77, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+  background-image: none; 
+}
+
+.pc-theme-orng .pc-shine,
+.pc-theme-orng .pc-glare {
+  display: none;
+}
+
+.pc-theme-orng .pc-inside {
+  background-image: linear-gradient(
+    145deg,
+    rgba(17, 17, 17, 0.9),
+    rgba(255, 145, 77, 0.08)
+  );
+  backdrop-filter: blur(6px);
+}
+
+.pc-theme-orng .pc-details h3,
+.pc-theme-orng .pc-details p {
+  background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.65));
+}
+
+.pc-theme-orng .pc-user-info {
+  background: rgba(255, 145, 77, 0.08);
+  border: 1px solid rgba(255, 145, 77, 0.22);
+}
+.pc-theme-orng .pc-handle {
+  color: rgba(255, 255, 255, 0.92);
+}
+.pc-theme-orng .pc-status {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pc-theme-orng .pc-contact-btn {
+  color: #fff;
+  border-color: rgba(255, 145, 77, 0.35);
+  background: rgba(255, 145, 77, 0.12);
+}
+.pc-theme-orng .pc-contact-btn:hover {
+  background: rgba(255, 145, 77, 0.2);
+  border-color: rgba(255, 145, 77, 0.6);
+  transform: translateY(-1px);
+}
+
+.pc-theme-orng:hover .pc-card,
+.pc-theme-orng.active .pc-card {
+  box-shadow: 0 0 0 1px rgba(255, 145, 77, 0.18),
+    0 0 24px rgba(255, 145, 77, 0.12), 0 18px 40px rgba(0, 0, 0, 0.45);
+}

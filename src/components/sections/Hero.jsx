@@ -95,36 +95,23 @@ export default function Hero() {
         {/* Right profile card */}
         <div className="relative z-10 flex justify-center md:justify-center lg:justify-end">
           <ProfileCard
-            // content
             name="Ahmed Alawneh"
             title="Front End Developer"
             handle="a7mad1112"
             status="Available"
             contactText="Hire Me"
-            avatarUrl="me.svg"
-            miniAvatarUrl="me.svg"
-            // behavior
+            avatarUrl="/me.svg"
+            miniAvatarUrl="/me.svg"
             showUserInfo
             enableTilt
             enableMobileTilt={false}
-            onContactClick={() => {
-              const target = document.getElementById("contact");
-              if (target) smoothScrollTo(target.offsetTop, 1000, 70);
-            }}
-            // style
             showBehindGradient={false}
-            innerGradient="none"
-            className={[
-              "rounded-2xl",
-              "border-[var(--border)]",
-              "transition-colors duration-300",
-              "focus-within:border-[var(--accent)] hover:border-[var(--accent)]",
-              // responsive safe sizing:
-              "w-full max-w-[18rem]",
-              "sm:max-w-[20rem]",
-              "md:max-w-[22rem]",
-              "lg:max-w-[24rem]",
-            ].join(" ")}
+            innerGradient={`linear-gradient(145deg, rgba(22,22,22,.95) 0%, rgba(255,145,77,.08) 100%)`}
+            className="pc-theme-orng w-full max-w-[20rem] sm:max-w-[22rem] md:max-w-[24rem]"
+            onContactClick={() => {
+              const el = document.getElementById("contact");
+              if (el) smoothScrollTo(el.offsetTop, 1000, 70);
+            }}
           />
         </div>
       </Container>
