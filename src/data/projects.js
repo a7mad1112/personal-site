@@ -1,10 +1,3 @@
-export const projectTabs = [
-  "All",
-  "Senior Project",
-  "Client Projects",
-  "Training Projects",
-];
-
 export const projects = {
   senior: [
     {
