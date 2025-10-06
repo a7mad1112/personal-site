@@ -86,7 +86,7 @@ export default function Contact() {
                 <div className="grid gap-5 md:grid-cols-2">
                   <InputFL
                     id="name"
-                    name="from_name" 
+                    name="from_name"
                     label="Your name"
                     autoComplete="name"
                     required
@@ -113,6 +113,11 @@ export default function Contact() {
                   label="Tell me how I can help you"
                   rows={6}
                   required
+                />
+                <input
+                  type="hidden"
+                  name="time"
+                  value={new Date().toLocaleString()}
                 />
 
                 <label className="mt-1 flex items-center gap-2 text-xs text-[var(--muted)]">

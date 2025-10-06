@@ -9,6 +9,7 @@ import Testimonials from "./components/sections/Testimonials.jsx";
 import Contact from "./components/sections/Contact.jsx";
 import ClientProjects from "./components/sections/ClientProjects.jsx";
 import TrainingProjects from "./components/sections/TrainingProjects.jsx";
+import Experience from "./components/sections/Experience.jsx";
 
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach((link) => {
@@ -32,6 +33,7 @@ export default function App() {
         <Hero />
         <TechStack />
         <Services />
+        <Experience />
         <ClientProjects />
         <SeniorProject />
         <TrainingProjects />
