@@ -14,6 +14,12 @@ export const testimonials = [
     image: "testimonials/obada.png",
   },
   {
+    name: "Ghaida Ja'aysah",
+    role: "Front-End Instructor & Teaching Partner",
+    feedback: "Ahmed is good.",
+    image: "testimonials/user-profile.png",
+  },
+  {
     name: "Laeth Nueirat",
     role: "Partner in Graduation Project",
     feedback:
