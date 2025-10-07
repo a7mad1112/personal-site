@@ -1,12 +1,32 @@
 import { useEffect, useMemo, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import Container from "../layout/Container.jsx";
 import SectionHeader from "../layout/SectionHeader.jsx";
 import Modal from "../ui/Modal.jsx";
 import { projects } from "../../data/projects.js";
 
+function useGridCols() {
+  const [cols, setCols] = useState(1);
+  useEffect(() => {
+    const mqSm = window.matchMedia("(min-width: 640px)");
+    const mqLg = window.matchMedia("(min-width: 1024px)");
+    const update = () => setCols(mqLg.matches ? 3 : mqSm.matches ? 2 : 1);
+    update();
+    mqSm.addEventListener?.("change", update);
+    mqLg.addEventListener?.("change", update);
+    return () => {
+      mqSm.removeEventListener?.("change", update);
+      mqLg.removeEventListener?.("change", update);
+    };
+  }, []);
+  return cols;
+}
+
 export default function TrainingProjects() {
   const training = projects.training || [];
   const [activeId, setActiveId] = useState(null);
+  const rm = useReducedMotion();
+  const cols = useGridCols();
 
   const activeProject = useMemo(
     () => training.find((p) => p.id === activeId),
@@ -36,6 +56,36 @@ export default function TrainingProjects() {
     }
   };
 
+  const cardV = {
+    hidden: {
+      opacity: 0,
+      filter: rm ? "none" : "blur(8px)",
+      clipPath: rm
+        ? "inset(0% 0% 0% 0% round 16px)"
+        : "inset(12% 12% 12% 12% round 16px)",
+      scale: rm ? 1 : 0.985,
+    },
+    visible: ({ idx, cols }) => {
+      const colIndex = cols > 0 ? idx % cols : 0;
+      const rowIndex = cols > 0 ? Math.floor(idx / cols) : 0;
+      const base = colIndex * 0.3;
+      const rowPad = rowIndex * 0.015;
+      return {
+        opacity: 1,
+        filter: "blur(0px)",
+        clipPath: "inset(0% 0% 0% 0% round 16px)",
+        scale: 1,
+        transition: {
+          type: "spring",
+          stiffness: 220,
+          damping: 24,
+          mass: 0.7,
+          delay: rm ? 0 : base + rowPad,
+        },
+      };
+    },
+  };
+
   return (
     <section id="training-projects" className="py-20 bg-[var(--surface)]">
       <Container>
@@ -45,17 +95,38 @@ export default function TrainingProjects() {
         />
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {training.map((proj) => (
-            <div
+          {training.map((proj, idx) => (
+            <motion.article
               key={proj.id}
+              variants={cardV}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{
+                once: true,
+                amount: 0.35,
+                margin: "0px 0px -10% 0px",
+              }}
+              custom={{ idx, cols }}
               className="group relative flex flex-col rounded-2xl bg-[var(--card)] border border-[var(--border)] overflow-hidden hover:border-[var(--accent)] transition-all duration-300"
+              whileHover={rm ? {} : { y: -3 }}
+              transition={{
+                type: "spring",
+                stiffness: 250,
+                damping: 22,
+                mass: 0.6,
+              }}
             >
               <div className="overflow-hidden">
-                <img
+                <motion.img
                   src={proj.image}
                   alt={proj.title}
-                  className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-56 object-cover"
                   loading="lazy"
+                  initial={rm ? {} : { scale: 1.015 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  whileHover={rm ? {} : { scale: 1.04 }}
                 />
               </div>
 
@@ -111,11 +182,10 @@ export default function TrainingProjects() {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.article>
           ))}
         </div>
 
-        {/* Modal */}
         <Modal
           open={!!activeProject}
           onClose={closeDetails}
@@ -123,7 +193,6 @@ export default function TrainingProjects() {
         >
           {activeProject && (
             <div className="space-y-6">
-              {/* صورة أكبر */}
               <div className="rounded-xl overflow-hidden border border-[var(--border)]">
                 <img
                   src={activeProject.image}
@@ -151,14 +220,12 @@ export default function TrainingProjects() {
                 )}
               </div>
 
-              {/* Overview */}
               {activeProject.overview && (
                 <p className="text-white/90 leading-relaxed">
                   {activeProject.overview}
                 </p>
               )}
 
-              {/* Features */}
               {activeProject.features?.length > 0 && (
                 <div>
                   <h4 className="text-white font-semibold mb-2">Features</h4>
@@ -170,7 +237,6 @@ export default function TrainingProjects() {
                 </div>
               )}
 
-              {/* Technologies */}
               {activeProject.technologies?.length > 0 && (
                 <div>
                   <h4 className="text-white font-semibold mb-2">
