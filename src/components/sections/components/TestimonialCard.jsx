@@ -41,7 +41,7 @@ export default function TestimonialCard({ it: t, onOpen }) {
     <article
       className={[
         "rounded-2xl bg-[#292a2d] border border-[var(--border)] p-6 flex flex-col",
-        "h-[380px]", // ارتفاع موحّد لكل الكروت
+        "h-[320px]",
       ].join(" ")}
     >
       {/* Header */}
@@ -53,14 +53,13 @@ export default function TestimonialCard({ it: t, onOpen }) {
         </div>
       </div>
 
-      {/* Feedback (clamped with ellipsis) */}
       <div className="mt-4 flex-1 flex flex-col">
         <div
           ref={boxRef}
           className={[
             "text-sm text-white/90 leading-relaxed bg-white/5 rounded-xl p-4",
             "border border-white/10",
-            "clamp-6", // ← قصّ إلى 6 أسطر مع نقاط
+            "clamp-6", // ← قصّ إلى 6 أسطر
           ].join(" ")}
         >
           <span className="text-[var(--accent)] text-xl align-top">“</span>
@@ -68,13 +67,12 @@ export default function TestimonialCard({ it: t, onOpen }) {
           <span className="text-[var(--accent)] text-xl align-top">”</span>
         </div>
 
-        {/* CTA أسفل الصندوق */}
         {isOverflow && (
           <div className="mt-3 flex justify-end">
             <button
               type="button"
               onClick={onOpen}
-              className="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-2)] transition"
+              className="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-2)] transition cursor-pointer"
             >
               Details
             </button>

@@ -20,6 +20,13 @@ export const testimonials = [
     image: "testimonials/user-profile.png",
   },
   {
+    name: "Dalia Alawneh",
+    role: "Frontend Engineer , Foothill Technology Solutions",
+    feedback:
+      "I had the pleasure of training Ahmed in the Node.js course, where he was highly active, collaborative, and consistently delivered impressive work. His dedication and innovation were especially clear in the final project, which stood out as a testament to his skills. Earlier, in the JavaScript course, he had already shown great initiative, strong problem-solving abilities, and creativity — qualities that he carried forward and elevated during the Node.js training.",
+    image: "testimonials/user-profile.png",
+  },
+  {
     name: "Laeth Nueirat",
     role: "Partner in Graduation Project",
     feedback:
