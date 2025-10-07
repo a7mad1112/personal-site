@@ -34,7 +34,7 @@ export default function TestimonialModal({ open, onClose, t }) {
             </button>
           </div>
 
-          <div className="p-5 max-h-[70vh] overflow-y-auto">
+          <div className="p-5 max-h-[70vh] overflow-y-auto" dir={t.dir}>
             <p className="text-sm text-white/90 leading-relaxed">
               <span className="text-[var(--accent)] text-xl align-top">“</span>
               {t.feedback}

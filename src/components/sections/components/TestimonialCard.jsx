@@ -55,6 +55,7 @@ export default function TestimonialCard({ it: t, onOpen }) {
 
       <div className="mt-4 flex-1 flex flex-col">
         <div
+          dir={t.dir} 
           ref={boxRef}
           className={[
             "text-sm text-white/90 leading-relaxed bg-white/5 rounded-xl p-4",
