@@ -196,7 +196,7 @@ export default function ClientProjects() {
                           Achievements / Progress
                         </h3>
                         <motion.ul
-                          className="list-disc list-inside space-y-1 text-white/90"
+                          className="list-disc list-outside pl-5 space-y-1 text-white/90 marker:text-white/70"
                           variants={cascade(0.05)}
                           initial="hidden"
                           animate="visible"
@@ -215,7 +215,7 @@ export default function ClientProjects() {
                           Next Milestones
                         </h3>
                         <motion.ul
-                          className="list-disc list-inside space-y-1 text-white/90"
+                          className="list-disc list-outside pl-5 space-y-1 text-white/90 marker:text-white/70"
                           variants={cascade(0.05)}
                           initial="hidden"
                           animate="visible"

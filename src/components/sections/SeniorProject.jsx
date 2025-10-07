@@ -178,13 +178,13 @@ export default function SeniorProject() {
                     Achievements / Progress
                   </h3>
                   <motion.ul
-                    className="list-disc list-inside space-y-1 text-white/90"
+                    className="list-disc list-outside pl-5 space-y-1 text-white/90 marker:text-white/70"
                     variants={cascade(0.05)}
                     initial="hidden"
                     animate="visible"
                   >
-                    {senior.achievements.current.map((a, idx) => (
-                      <motion.li key={idx} variants={item}>
+                    {senior.achievements.current.map((a, i) => (
+                      <motion.li key={i} variants={item}>
                         {a}
                       </motion.li>
                     ))}
@@ -197,13 +197,13 @@ export default function SeniorProject() {
                       Next Milestones
                     </h3>
                     <motion.ul
-                      className="list-disc list-inside space-y-1 text-white/90"
+                      className="list-disc list-outside pl-5 space-y-1 text-white/90 marker:text-white/70"
                       variants={cascade(0.05)}
                       initial="hidden"
                       animate="visible"
                     >
-                      {senior.achievements.nextMilestones.map((m, idx) => (
-                        <motion.li key={idx} variants={item}>
+                      {senior.achievements.nextMilestones.map((m, i) => (
+                        <motion.li key={i} variants={item}>
                           {m}
                         </motion.li>
                       ))}

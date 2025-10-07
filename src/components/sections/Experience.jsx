@@ -29,7 +29,6 @@ const ExperienceItem = ({ item, index }) => {
         }}
       />
 
-      {/* النقطة */}
       <span
         className="absolute -left-[6px] top-3 h-3 w-3 rounded-full shadow-[0_0_0_6px_rgba(255,145,77,.15)]"
         style={{ backgroundColor: "var(--accent)" }}

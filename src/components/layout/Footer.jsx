@@ -23,7 +23,6 @@ export default function Footer() {
     <footer className="border-t border-[var(--border)] bg-[var(--bg)]">
       <Container className="py-12">
         <div className="grid gap-10 md:grid-cols-3">
-          {/* Brand */}
           <div className="space-y-4">
             <a
               href="#home"
@@ -34,9 +33,6 @@ export default function Footer() {
               className="inline-flex items-center gap-3"
             >
               <img src="logo.svg" alt="Logo" className="h-8 w-auto" />
-              <span className="text-white font-semibold tracking-tight">
-                Ahmed Alawneh
-              </span>
             </a>
             <p className="text-sm text-[var(--muted)] max-w-xs">
               Front-end engineer crafting fast, accessible, and beautiful web
