@@ -77,7 +77,7 @@ src/
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/a7mad1112/personal-site.git
-cd portfolio
+cd personal-site
 ```
 
 ### 2. Install dependencies
