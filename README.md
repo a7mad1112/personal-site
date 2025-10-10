@@ -1,6 +1,6 @@
 # 🌐 Ahmed Alawneh — Personal Portfolio
 
-**Live Demo:** [https://ahmed-alawneh.onrender.com](https://ahmed-alawneh.onrender.com)
+**Live Demo:** [https://ahmedalawneh.me/](https://ahmedalawneh.me/)
 
 This is the official portfolio website of **Ahmed Alawneh**, a passionate Front-End Developer specializing in **React.js** and **modern UI/UX**.  
 It showcases professional projects, client collaborations, testimonials, and a detailed overview of training and senior work.
