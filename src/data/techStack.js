@@ -62,7 +62,6 @@ export const techStack = [
   },
   { name: "Figma", path: "tech-stack/figma.svg", href: "https://figma.com" },
   { name: "Canva", path: "tech-stack/canva.svg", href: "https://canva.com" },
-
   {
     name: "Notion",
     path: "tech-stack/notion.svg",

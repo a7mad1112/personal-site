@@ -5,6 +5,7 @@ import SectionHeader from "../layout/SectionHeader.jsx";
 import SpotlightCard from "../ui/SpotlightCard.jsx";
 import { services } from "../../data/services.js";
 import AnimatedSvgLines from "../ui/AnimatedSvgLines.jsx";
+import LottieOnce from "../ui/LottieOnce.jsx";
 
 export default function Services() {
   const [flipped, setFlipped] = useState(new Set());
@@ -110,17 +111,14 @@ export default function Services() {
                           WebkitBackfaceVisibility: "hidden",
                         }}
                       >
-                        {s.front.path && (
-                          <motion.img
-                            src={s.front.path}
-                            alt=""
-                            aria-hidden="true"
-                            className="h-16 w-16 object-contain"
-                            loading="lazy"
-                            whileHover={rm ? {} : { scale: 1.03 }}
-                            transition={{ type: "tween", duration: 0.18 }}
+                        {s.front.lottie ? (
+                          <LottieOnce
+                            animationData={s.front.lottie}
+                            size={96} // icon sizes
+                            once // runs once
+                            trigger="inview"
                           />
-                        )}
+                        ) : null}
                         <h3 className="text-lg font-semibold text-white">
                           {s.front.title}
                         </h3>

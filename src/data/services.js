@@ -1,9 +1,13 @@
+import mobileDev from "../assets/animations/services/mobile-dev.json";
+import webDev from "../assets/animations/services/web-dev.json";
+import editDev from "../assets/animations/services/edit-dev.json";
+
 export const services = [
   {
     front: {
       title: "Responsive Development",
       desc: "Pixel-perfect, accessible UI for all screens.",
-      path: "/services/mobile.svg",
+      lottie: mobileDev,
     },
     back: {
       title: "Responsive Development",
@@ -14,7 +18,7 @@ export const services = [
     front: {
       title: "Web App Development",
       desc: "React apps that are fast and scalable.",
-      path: "/services/laptop.svg",
+      lottie: webDev,
     },
     back: {
       title: "Web App Development",
@@ -25,7 +29,7 @@ export const services = [
     front: {
       title: "Editing & Re-design",
       desc: "Refactor, refresh, and elevate.",
-      path: "/services/edit.svg",
+      lottie: editDev,
     },
     back: {
       title: "Editing & Re-design",
