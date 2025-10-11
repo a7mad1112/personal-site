@@ -7,18 +7,109 @@ import { services } from "../../data/services.js";
 import AnimatedSvgLines from "../ui/AnimatedSvgLines.jsx";
 import LottieOnce from "../ui/LottieOnce.jsx";
 
+function ServiceCard({ s }) {
+  const rm = useReducedMotion();
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.div
+      // enter animation (fade/float)
+      initial={{ opacity: 0, y: rm ? 0 : 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-15% 0px" }}
+      whileHover={rm ? {} : { y: -2, scale: 1.01 }}
+      transition={{ type: "spring", stiffness: 220, damping: 20, mass: 0.6 }}
+    >
+      <SpotlightCard
+        className="h-64 cursor-pointer"
+        spotlightColor="rgba(255, 145, 77, 0.18)"
+      >
+        {/* The perspective container MUST wrap the rotating element */}
+        <div
+          className="relative h-full w-full"
+          style={{ perspective: 1000 }}
+          onMouseEnter={() => !rm && setHovered(true)}
+          onMouseLeave={() => !rm && setHovered(false)}
+        >
+          {/* Rotating element */}
+          <motion.div
+            className="relative h-full w-full [transform-style:preserve-3d]"
+            style={{
+              willChange: "transform",
+              transform: "translateZ(0)", // safari stability
+            }}
+            animate={{ rotateY: hovered ? 180 : 0 }}
+            transition={{ type: "spring", stiffness: 140, damping: 16 }}
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {/* Front side */}
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center text-center gap-4 rounded-2xl border border-[var(--border)] p-4"
+              style={{
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: "translateZ(0)",
+              }}
+            >
+              {s.front.lottie ? (
+                <LottieOnce
+                  animationData={s.front.lottie}
+                  // these props are optional; keep only if your LottieOnce supports them
+                  size={96}
+                  once
+                  trigger="inview"
+                />
+              ) : s.front.path ? (
+                <motion.img
+                  src={s.front.path}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-16 w-16 object-contain"
+                  loading="lazy"
+                  whileHover={rm ? {} : { scale: 1.03 }}
+                  transition={{ type: "tween", duration: 0.18 }}
+                />
+              ) : null}
+
+              <h3 className="text-lg font-semibold text-white">
+                {s.front.title}
+              </h3>
+              {s.front.desc && (
+                <p className="text-sm text-[var(--muted)] max-w-[80%]">
+                  {s.front.desc}
+                </p>
+              )}
+            </div>
+
+            {/* Back side */}
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center text-center gap-3 rounded-2xl border border-[var(--border)] p-4 [transform:rotateY(180deg)]"
+              style={{
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: "rotateY(180deg) translateZ(0)",
+              }}
+            >
+              <h3 className="text-lg font-bold text-[var(--accent)]">
+                {s.back.title}
+              </h3>
+              <p className="text-sm text-white/90 leading-relaxed">
+                {s.back.desc}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </SpotlightCard>
+    </motion.div>
+  );
+}
+
 export default function Services() {
-  const [flipped, setFlipped] = useState(new Set());
   const sectionRef = useRef(null);
   const rm = useReducedMotion();
 
-  const toggleFlip = (idx) => {
-    setFlipped((prev) => {
-      const next = new Set(prev);
-      next.has(idx) ? next.delete(idx) : next.add(idx);
-      return next;
-    });
-  };
+  // header animations
   const fadeUp = {
     hidden: { opacity: 0, y: rm ? 0 : 12 },
     visible: {
@@ -37,6 +128,7 @@ export default function Services() {
       },
     },
   };
+
   return (
     <section
       id="services"
@@ -44,6 +136,7 @@ export default function Services() {
       className="relative overflow-hidden py-24"
     >
       <AnimatedSvgLines observeRef={sectionRef} opacity={0.2} duration={1600} />
+
       <div className="relative z-10">
         <Container>
           <motion.div
@@ -57,6 +150,7 @@ export default function Services() {
               subtitle="This is what I can do for you"
             />
           </motion.div>
+
           <motion.div
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
             variants={gridStagger}
@@ -64,90 +158,9 @@ export default function Services() {
             whileInView="visible"
             viewport={{ once: true, margin: "-15% 0px" }}
           >
-            {services.map((s, idx) => {
-              const isFlipped = flipped.has(idx);
-              return (
-                <motion.div
-                  key={s.front.title}
-                  variants={fadeUp}
-                  whileHover={rm ? {} : { y: -2, scale: 1.01 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 220,
-                    damping: 20,
-                    mass: 0.6,
-                  }}
-                >
-                  <SpotlightCard
-                    className="h-64 cursor-pointer"
-                    spotlightColor="rgba(255, 145, 77, 0.18)"
-                  >
-                    <motion.div
-                      role="button"
-                      tabIndex={0}
-                      aria-pressed={isFlipped}
-                      onClick={() => toggleFlip(idx)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          toggleFlip(idx);
-                        }
-                      }}
-                      className="relative h-full w-full [transform-style:preserve-3d]"
-                      style={{
-                        transformPerspective: 1000,
-                      }}
-                      animate={{ rotateY: isFlipped ? 180 : 0 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 140,
-                        damping: 16,
-                      }}
-                    >
-                      <div
-                        className="absolute inset-0 flex flex-col items-center justify-center text-center gap-4 rounded-2xl border border-[var(--border)] p-4"
-                        style={{
-                          backfaceVisibility: "hidden",
-                          WebkitBackfaceVisibility: "hidden",
-                        }}
-                      >
-                        {s.front.lottie ? (
-                          <LottieOnce
-                            animationData={s.front.lottie}
-                            size={96} // icon sizes
-                            once // runs once
-                            trigger="inview"
-                          />
-                        ) : null}
-                        <h3 className="text-lg font-semibold text-white">
-                          {s.front.title}
-                        </h3>
-                        {s.front.desc && (
-                          <p className="text-sm text-[var(--muted)] max-w-[80%]">
-                            {s.front.desc}
-                          </p>
-                        )}
-                      </div>
-
-                      <div
-                        className="absolute inset-0 flex flex-col items-center justify-center text-center gap-3 rounded-2xl border border-[var(--border)] p-4 [transform:rotateY(180deg)]"
-                        style={{
-                          backfaceVisibility: "hidden",
-                          WebkitBackfaceVisibility: "hidden",
-                        }}
-                      >
-                        <h3 className="text-lg font-bold text-[var(--accent)]">
-                          {s.back.title}
-                        </h3>
-                        <p className="text-sm text-white/90 leading-relaxed">
-                          {s.back.desc}
-                        </p>
-                      </div>
-                    </motion.div>
-                  </SpotlightCard>
-                </motion.div>
-              );
-            })}
+            {services.map((s) => (
+              <ServiceCard key={s.front.title} s={s} />
+            ))}
           </motion.div>
         </Container>
       </div>

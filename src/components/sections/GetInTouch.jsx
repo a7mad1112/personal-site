@@ -1,11 +1,17 @@
 import Card from "../ui/Card.jsx";
-
+import mailIcon from "../../assets/animations/mails/mail.json";
+import LottieOnce from "../ui/LottieOnce.jsx";
 export default function GetInTouch() {
   return (
     <Card className="relative border-0 bg-transparent p-0">
       <div className="flex items-start gap-4">
         <div className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--accent)]/15 text-[var(--accent)]">
-          ✉️
+          <LottieOnce
+            animationData={mailIcon}
+            size={64}
+            once
+            trigger="inview"
+          />
         </div>
         <div>
           <h3 className="mb-1 text-xl font-semibold text-white">
