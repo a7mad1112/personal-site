@@ -1,6 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Container from "../layout/Container.jsx";
 import SectionHeader from "../layout/SectionHeader.jsx";
+import Folder from "../ui/folder/Folder.jsx";
+import { telegramPosts } from "../../data/telegramPosts.js";
 
 export default function ContentCreator() {
   const rm = useReducedMotion();
@@ -12,6 +14,27 @@ export default function ContentCreator() {
       transition: { duration: 0.5, ease: "easeOut" },
     },
   };
+
+  const folderItems = telegramPosts.map((p) => (
+    <a
+      key={p.link}
+      href={p.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={p.name}
+      aria-label={p.name}
+      className="block w-full h-full "
+    >
+      <div className="w-full h-full rounded-[12px] overflow-hidden">
+        <img
+          src={p.img}
+          alt={p.name}
+          draggable={false}
+          className="w-full h-full object-cover align-middle"
+        />
+      </div>
+    </a>
+  ));
 
   return (
     <section id="content" className="py-20 bg-[var(--surface)]">
@@ -29,7 +52,7 @@ export default function ContentCreator() {
           />
 
           <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Left content */}
+            {/* Left text block */}
             <motion.div
               className="flex-1 space-y-4 text-[var(--muted)]"
               variants={fadeUp}
@@ -53,7 +76,7 @@ export default function ContentCreator() {
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] px-5 py-2 text-[var(--accent)] transition-all"
               >
                 <img
-                  src={"telegram.svg"}
+                  src="telegram/telegram.svg"
                   alt="Telegram"
                   className="h-8 w-8"
                   loading="lazy"
@@ -63,14 +86,16 @@ export default function ContentCreator() {
             </motion.div>
 
             <motion.div
-              className="flex-1 flex justify-center md:justify-end"
+              className="flex-1 flex justify-center md:justify-end mr-8"
               variants={fadeUp}
             >
-              <img
-                src="programmerLevi.png" 
-                alt="ProgrammerLevi Channel"
-                className="max-w-xs md:max-w-sm rounded-2xl border border-[var(--border)] bg-[#1b1b1b]"
-                loading="lazy"
+              <Folder
+                size={1.15}
+                color="#F59E0B"
+                items={folderItems}
+                className="select-none"
+                showHint={true}
+                hintText="Click to explore posts"
               />
             </motion.div>
           </div>
