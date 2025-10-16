@@ -49,12 +49,12 @@ export const projects = {
       title: "Farm Go – Smart Farm Management System",
       date: "05/2025 - present",
       tag: "Full-Stack (React + ASP.NET Core)",
-      image: "farm_go.webp",
+      image: "farm_go.png",
       description: `
         Farm Go is a comprehensive farm management platform designed to streamline daily agricultural operations, including livestock tracking, employee management, resources, financial transactions, and production monitoring. The system provides real-time dashboards for administrators and supports multi-role access for farmers, veterinarians, and finance officers. It integrates intuitive analytics, automated record handling, and a modern responsive UI optimized for tablets and desktop.
     `,
       technologies: [
-        "React (MUI + React Query)",
+        "React (TailwindCSS v4 + React Query)",
         "ASP.NET Core Web API",
         "Entity Framework Core",
         "SQL Server",
