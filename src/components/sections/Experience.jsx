@@ -1,5 +1,6 @@
 import { experiences } from "../../data/experiences";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Badge = ({ children, variant = "primary" }) => {
   const base =
@@ -12,7 +13,25 @@ const Badge = ({ children, variant = "primary" }) => {
   return <span className={`${base} ${styles[variant]}`}>{children}</span>;
 };
 
+const Quote = ({ children, dir = "ltr" }) => (
+  <div
+    dir={dir}
+    className="
+      relative rounded-xl border border-[color:rgba(255,255,255,.08)]
+      bg-white/[.04] p-3 text-sm text-white/90
+    "
+  >
+    <span  dir={dir} aria-hidden className="absolute left-3 top-2 text-[var(--accent)]">
+    </span>
+    <span className="block px-4">{children}</span>
+  </div>
+);
+
 const ExperienceItem = ({ item, index }) => {
+  const [showFeedback, setShowFeedback] = useState(false);
+  const hasFeedback =
+    Array.isArray(item.feedbacks) && item.feedbacks.length > 0;
+
   return (
     <motion.li
       initial={{ opacity: 0, y: 18 }}
@@ -21,6 +40,7 @@ const ExperienceItem = ({ item, index }) => {
       transition={{ duration: 0.35, delay: index * 0.06 }}
       className="relative pl-7 md:pl-10"
     >
+      {/* vertical line */}
       <span
         className="absolute left-0 top-0 h-full w-[2px] rounded-full"
         style={{
@@ -28,7 +48,7 @@ const ExperienceItem = ({ item, index }) => {
             "linear-gradient(to bottom, rgba(255,145,77,.9), rgba(255,145,77,.15))",
         }}
       />
-
+      {/* dot */}
       <span
         className="absolute -left-[6px] top-3 h-3 w-3 rounded-full shadow-[0_0_0_6px_rgba(255,145,77,.15)]"
         style={{ backgroundColor: "var(--accent)" }}
@@ -64,6 +84,7 @@ const ExperienceItem = ({ item, index }) => {
           </ul>
         )}
 
+        {/* Certificate link */}
         {item.certificate && (
           <div className="pt-2">
             <a
@@ -88,6 +109,63 @@ const ExperienceItem = ({ item, index }) => {
                 />
               </svg>
             </a>
+          </div>
+        )}
+
+        {/* Feedback toggle */}
+        {hasFeedback && (
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => setShowFeedback((s) => !s)}
+              className="
+                inline-flex items-center gap-2 rounded-xl
+                px-3 py-1.5 text-sm font-medium
+                border border-[var(--border)]
+                text-white/90 hover:text-white
+                hover:border-[var(--accent)]/60
+                transition
+              "
+              aria-expanded={showFeedback}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                className={`transition-transform ${
+                  showFeedback ? "rotate-180" : ""
+                }`}
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 9l6 6 6-6"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              {showFeedback ? "Hide" : "View"} student feedback (
+              {item.feedbacks.length})
+            </button>
+
+            {showFeedback && (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-3 grid gap-2"
+              >
+                <div className="rounded-xl border border-[var(--border)] bg-[#1f2023] p-3">
+                  <div className="grid gap-2" dir="rtl">
+                    {item.feedbacks.map((fb, i) => (
+                      <Quote key={i} dir="rtl">{fb}</Quote>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
         )}
       </div>

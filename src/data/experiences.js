@@ -5,14 +5,21 @@ export const experiences = [
     company: "IEEE Student Branch – Arab American University",
     date: "June 2025",
     description: `
-    Conducted a comprehensive Front-End Development training covering modern web development fundamentals, component-based architecture, and best practices using React and JavaScript. Focused on helping students build real-world UI projects and prepare for freelancing opportunities.
-    `,
+  Led a Front-End Basics training focusing on modern HTML & CSS: semantics, accessibility, responsive layouts, Flexbox & Grid, and clean component-level styling. Guided students to build polished, production-like pages and get ready for freelancing fundamentals.
+  `,
     achievements: [
-      "Designed a structured React learning path tailored for university students",
-      "Delivered hands-on workshops and project-based sessions",
-      "Mentored participants in applying for internships and freelance roles",
+      "Designed a structured HTML/CSS learning track tailored for university students",
+      "Delivered hands-on workshops building responsive, accessible pages",
+      "Mentored participants on portfolios, presentation, and freelancing basics",
     ],
     type: "Teaching",
+    feedbacks: [
+      "أداء ممتاز، الشرح ممتاز وفهمه للمحتوى جيد جدًا مما جعل عملية توصيله للتلاميذ أفضل.",
+      "ما شاء الله عنه عنده علم وبيقدر يعطي وتعامله بجنن.",
+      "يا ريت الكل مثله.",
+      "كان رائع في الشرح والتعامل.",
+      "المدرب أحمد ممتاز، شرحه واضح وتعامله مثالي.",
+    ],
   },
   {
     id: "e2",
