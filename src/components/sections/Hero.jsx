@@ -110,8 +110,8 @@ export default function Hero() {
             <Button href="#contact">Let’s Work Together</Button>
             <Button
               as="a"
-              href={import.meta.env.BASE_URL + "AhmedAlawnehResume.pdf"}
-              download="AhmedAlawnehResume.pdf"
+              href={import.meta.env.BASE_URL + "Ahmed_Alawneh.docx"}
+              download="Ahmed_Alawneh.docx"
               rel="noopener noreferrer"
               variant="outline"
             >
