@@ -45,6 +45,56 @@ export const projects = {
 
   clients: [
     {
+      id: "c2",
+      title: "Workshops Manager – Financial & Operational Dashboard",
+      date: "10/2025 - 11/2025",
+      tag: "Front-End (React + PHP API)",
+      image: "workshops-manager.png",
+      description: `
+    Workshops Manager is a financial and operational dashboard built to manage workshops, track their expenses and payments, and monitor open cheques in real-time. 
+    The system provides administrators with clear statistics, filtering tools, and pagination for organized data navigation. 
+    Designed with a modern and responsive UI inspired by Figma layouts, the dashboard enables seamless management of financial records, workshop performance, and cheque tracking.
+  `,
+      technologies: [
+        "React (TypeScript + TailwindCSS v4)",
+        "React Query (TanStack Query)",
+        "Formik + Yup Validation",
+        "PHP REST API (Custom Backend)",
+        "Figma (UI/UX Design)",
+      ],
+
+      features: [
+        "View, create, and delete workshops with instant data refresh",
+        "Integrated expense and payment management modules",
+        "Cheque tracking with detailed status view and Arabic labels",
+        "Real-time statistics cards for each workshop",
+        "Global pagination and filtering for large datasets",
+        "Responsive, RTL-ready design with clean visual hierarchy",
+      ],
+
+      team: [
+        { name: "Ahmed Alawneh" },
+        { name: "Basil Adra" },
+        { name: "Qusai Alawneh" },
+      ],
+
+      achievements: {
+        current: [
+          "Built a full React front-end using TypeScript and React Query for optimized data fetching and caching",
+          "Implemented reusable components such as Modals, DataTables, and StatCards with consistent UX",
+          "Integrated PHP backend endpoints with form validation via Formik + Yup",
+          "Designed and developed responsive layouts using TailwindCSS v4 with RTL support",
+          "Delivered a fully functional bilingual dashboard with clean code structure and modular logic",
+        ],
+        nextMilestones: [
+          "Add role-based authentication for admins and accountants",
+          "Implement PDF/Excel report generation for workshop summaries",
+          "Enhance dashboard with visual charts for financial analytics",
+          "Deploy the system to a production server (Vercel + cPanel PHP API)",
+        ],
+      },
+    },
+    {
       id: "c1",
       title: "Farm Go – Smart Farm Management System",
       date: "05/2025 - present",
