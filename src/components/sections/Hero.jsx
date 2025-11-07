@@ -110,12 +110,12 @@ export default function Hero() {
             <Button href="#contact">Let’s Work Together</Button>
             <Button
               as="a"
-              href={import.meta.env.BASE_URL + "Ahmed_Alawneh.docx"}
-              download="Ahmed_Alawneh.docx"
+              href="https://docs.google.com/document/d/1YN-oLrw7Nz2QLTl6bLATPfwdZqiUGRw_/edit"
+              target="_blank"
               rel="noopener noreferrer"
               variant="outline"
             >
-              Download CV
+              View Resume
             </Button>
           </motion.div>
 
