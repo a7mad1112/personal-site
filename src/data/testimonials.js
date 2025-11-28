@@ -40,6 +40,14 @@ export const testimonials = [
     dir: "ltr",
   },
   {
+    name: "Khalid Nidal",
+    role: "Partner in Graduation Project",
+    feedback:
+      "Working with Ahmed on our graduation project was an absolute pleasure he is professional, reliable, and very easy to collaborate with. He always made the work feel organized and stress-free, and his eye for front-end details really improved the final result. We also worked together to explain concepts to students in a clear and supportive way, which showed how committed he is to helping others learn. I highly recommend him to any team looking for a dedicated and talented front-end developer.",
+    image: "testimonials/khalid.jpg",
+    dir: "ltr",
+  },
+  {
     name: "Basil Al-Adra",
     role: "UI/UX Designer & Frontend Developer, FarmGo Team",
     feedback:
