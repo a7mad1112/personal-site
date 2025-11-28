@@ -1,5 +1,16 @@
 export const awards = [
   {
+    id: "jawed-oman-forum-2025",
+    title: "Arab Creative Student Forum – Oman",
+    organization: "26th Arab Creative Student Forum · Sultanate of Oman",
+    date: "November 2025",
+    placement: "International Research Presentation",
+    summary:
+      "Our Jawed AI graduation project was presented at the 26th Arab Creative Student Forum in Oman, showcasing an intelligent Tajweed error-detection system and sharing our research journey with students and innovators from across the Arab world.",
+    linkedInLink:
+      "https://www.linkedin.com/posts/ahmedalalawneh_%D9%82%D8%A8%D9%84-%D9%86%D8%AD%D9%88-%D8%A7%D8%B3%D8%A8%D9%88%D8%B9-%D8%AD%D8%B8%D9%8A%D8%AA-%D8%A8%D9%81%D8%B1%D8%B5%D8%A9-%D9%85%D9%85%D9%8A%D8%B2%D8%A9-%D9%84%D8%AA%D9%85%D8%AB%D9%8A%D9%84-%D9%81%D8%B1%D9%8A%D9%82%D9%8A-activity-7396977135598473216-7l13?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD37Uo4BEgiUmBlJS_K4JfGo26ZQsebV5f0",
+  },
+  {
     id: "innovation-2nd",
     title: "Innovation & Creativity Competition",
     organization:
