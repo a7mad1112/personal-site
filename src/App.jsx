@@ -12,7 +12,7 @@ import TrainingProjects from "./components/sections/TrainingProjects.jsx";
 import Experience from "./components/sections/Experience.jsx";
 import ContentCreator from "./components/sections/ContentCreator.jsx";
 import Awards from "./components/sections/Awards.jsx";
-
+import LeviChatbot from "./components/chatbot/LeviChatbot.jsx";
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach((link) => {
   link.addEventListener("click", function (e) {
@@ -45,6 +45,8 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      {/* Levi floating chatbot */}
+      <LeviChatbot />
     </>
   );
 }

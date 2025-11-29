@@ -212,3 +212,11 @@
     height: 8px;
   }
 }
+
+#chatbot-input ~ button {
+  display: none;
+}
+
+#chatbot-input:valid ~ button {
+  display: unset;
+}
