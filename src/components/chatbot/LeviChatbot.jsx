@@ -80,7 +80,7 @@ export default function LeviChatbot() {
               <div className="flex items-center gap-3">
                 <LeviChatbotIcon size={32} />
                 <div>
-                  <p className="text-sm font-semibold">Levi</p>
+                  <p className="text-sm font-semibold text-[var(--accent)]">Levi</p>
                   <p className="text-[11px] text-[var(--muted)]">
                     AI assistant about Ahmed&apos;s portfolio
                   </p>
