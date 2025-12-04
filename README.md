@@ -1,5 +1,7 @@
 # 🌐 Ahmed Alawneh — Personal Portfolio
 
+<img width="7680" height="4320" alt="personal-site-cover_v1" src="https://github.com/user-attachments/assets/0f4dac11-f8c1-4966-9d37-676972db8579" />
+
 **Live Demo:** [https://ahmedalawneh.me/](https://ahmedalawneh.me/)
 
 This is the official portfolio website of **Ahmed Alawneh**, a passionate Front-End Developer specializing in **React.js** and **modern UI/UX**.  
