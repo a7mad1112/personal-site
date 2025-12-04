@@ -56,7 +56,7 @@ export default function LeviChatbot() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         className="
-          fixed bottom-6 right-6 z-40
+          fixed bottom-6 left-6 z-40
           flex items-center gap-2
           rounded-full border border-[var(--border)]
           bg-[#050816] px-3 py-2
@@ -73,14 +73,16 @@ export default function LeviChatbot() {
       </button>
 
       {open && (
-        <div className="fixed bottom-24 right-4 z-40 w-[min(380px,calc(100%-2rem))]">
+        <div className="fixed bottom-24 left-4 z-40 w-[min(380px,calc(100%-2rem))]">
           <div className="flex max-h-[70vh] flex-col rounded-2xl border border-[var(--border)] bg-[#050816]/95 backdrop-blur shadow-[0_24px_70px_rgba(0,0,0,0.85)]">
             {/* Header */}
             <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3 bg-black/60">
               <div className="flex items-center gap-3">
                 <LeviChatbotIcon size={32} />
                 <div>
-                  <p className="text-sm font-semibold text-[var(--accent)]">Levi</p>
+                  <p className="text-sm font-semibold text-[var(--accent)]">
+                    Levi
+                  </p>
                   <p className="text-[11px] text-[var(--muted)]">
                     AI assistant about Ahmed&apos;s portfolio
                   </p>
