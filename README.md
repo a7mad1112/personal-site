@@ -74,6 +74,33 @@ src/
 
 ---
 
+## 🤖 Levi Chatbot
+
+Levi is an AI assistant tailored specifically to Ahmed’s portfolio. It can answer questions about his skills, projects, experience, availability, and how to contact him — all without leaving the page.
+
+- Access: Click the Levi button in the bottom-left corner.
+- Purpose: Quick answers about Ahmed’s work and ways to connect.
+- Try prompts like: “What services does Ahmed offer?”, “Show me client projects”, or “send me the social links for Ahmed”.
+
+Example
+
+User:
+
+send me the social links for Ahmed
+
+Response:
+
+Certainly! You can connect with Ahmed and explore his work through these links:
+
+- GitHub: https://github.com/a7mad1112
+- LinkedIn: https://www.linkedin.com/in/ahmedalalawneh
+- Telegram: https://t.me/ProgrammerLevi
+- WhatsApp: https://wa.me/970595809023
+- Phone: +970595809023
+- Resume (CV): https://docs.google.com/document/d/1YN-oLrw7Nz2QLTl6bLATPfwdZqiUGRw_/edit
+
+---
+
 ## 🛠️ Development Setup
 
 ### 1. Clone the repository
