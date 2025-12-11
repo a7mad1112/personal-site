@@ -6,7 +6,7 @@ import ChatMessage from "./ChatMessage.jsx";
 
 const API_URL =
   "https://fathomless-island-31099-2b10554a00d5.herokuapp.com/api/chat";
-
+// "http://localhost:4000/api/chat";
 export default function LeviChatbot() {
   const [chatHistory, setChatHistory] = useState([]);
   const [open, setOpen] = useState(false);
