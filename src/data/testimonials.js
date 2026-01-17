@@ -1,5 +1,13 @@
 export const testimonials = [
   {
+    name: "Ibrahim Kilani",
+    role: "Teaching Partner & Software Engineer",
+    feedback:
+      "Ahmad is one of the best people to work with, his technical skills are outstanding. Collaborating with him in the JavaScript Bootcamp as an Instructor was far more than just a collaboration. His communication skills and ability to work in a team is super good & fun at the same time. I would definitely consider working with Ahmad again on future work. I STRONGLY recommend Ahmad 🤍.",
+    image: "testimonials/ibrahim-kilani.jpg",
+    dir: "ltr",
+  },
+  {
     name: "Hajra A.",
     role: "Client at PeoplePerHour",
     feedback:
