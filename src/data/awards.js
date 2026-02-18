@@ -1,5 +1,17 @@
 export const awards = [
   {
+    id: "ai-promptathon-3rd-2026",
+    title: "AI Promptathon Hackathon",
+    organization:
+      "Gaza Sky Geeks · In collaboration with Arab American University",
+    date: "January 2026",
+    placement: "3rd Place 🥉",
+    summary:
+      "Collaborated with a team of innovators to showcase 'Jawed AI' at the AI Promptathon, leveraging advanced prompt engineering and speech recognition to teach Tajweed rules.",
+    linkedInLink:
+      "https://www.linkedin.com/posts/laethnueirat_competition-laethnueirat-ugcPost-7422316682066575361-6LUg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD37Uo4BEgiUmBlJS_K4JfGo26ZQsebV5f0",
+  },
+  {
     id: "jawed-oman-forum-2025",
     title: "Arab Creative Student Forum – Oman",
     organization: "26th Arab Creative Student Forum · Sultanate of Oman",
