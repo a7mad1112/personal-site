@@ -39,15 +39,16 @@ export const experiences = [
   {
     id: "e3",
     title: "JavaScript Instructor",
-    company: "IEEE & Gaza Sky Geeks",
-    date: "August 2023",
+    company: "IEEE AAUP & Gaza Sky Geeks",
+    date: "August 2023 – January 2026",
     description: `
-    Delivered an interactive JavaScript training covering ES6+, DOM manipulation, and problem-solving fundamentals. Focused on helping students grasp core programming logic and improve their front-end skills.
+    Designed and delivered a high-impact JavaScript curriculum for two separate bootcamps, mentoring over 60 students in total. The training emphasizes ES6+ mastery, asynchronous programming, and DOM manipulation, bridging the gap between basic syntax and professional front-end logic.
     `,
     achievements: [
-      "Explained core JavaScript concepts with practical coding examples",
-      "Supported learners with one-on-one mentoring and feedback",
-      "Coordinated sessions in collaboration with GSG mentors",
+      "Successfully trained 60+ students across two intensive cohorts (30+ students per bootcamp)",
+      "Developed a project-based syllabus focusing on ES6+, API integration, and clean code principles",
+      "Collaborated with Gaza Sky Geeks and IEEE mentors to evaluate student performance and logic building",
+      "Facilitated hands-on coding challenges that improved participants' problem-solving speed",
     ],
     type: "Teaching",
   },
