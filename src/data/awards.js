@@ -1,5 +1,16 @@
 export const awards = [
   {
+    id: "technopark-ai-research-1st-2026",
+    title: "TechnoPark AI Research Award",
+    organization: "Palestine Techno Park (Birzeit) · AI Week 2026",
+    date: "May 2026",
+    placement: "1st Place 🥇",
+    summary:
+      "Secured 1st place among approximately 40 nationwide research entries for 'Jawed AI'—an innovative AI-driven system for automated Tajweed error detection. Recognized during AI Week 2026 for leveraging artificial intelligence to enhance Quranic recitation and self-learning.",
+    linkedInLink:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7454736856836894720/",
+  },
+  {
     id: "ai-promptathon-3rd-2026",
     title: "AI Promptathon Hackathon",
     organization:
