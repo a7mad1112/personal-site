@@ -59,27 +59,19 @@ export default function TrainingProjects() {
   const cardV = {
     hidden: {
       opacity: 0,
-      filter: rm ? "none" : "blur(8px)",
-      clipPath: rm
-        ? "inset(0% 0% 0% 0% round 16px)"
-        : "inset(12% 12% 12% 12% round 16px)",
-      scale: rm ? 1 : 0.985,
+      y: rm ? 0 : 20,
     },
     visible: ({ idx, cols }) => {
       const colIndex = cols > 0 ? idx % cols : 0;
       const rowIndex = cols > 0 ? Math.floor(idx / cols) : 0;
-      const base = colIndex * 0.3;
-      const rowPad = rowIndex * 0.015;
+      const base = colIndex * 0.1;
+      const rowPad = rowIndex * 0.05;
       return {
         opacity: 1,
-        filter: "blur(0px)",
-        clipPath: "inset(0% 0% 0% 0% round 16px)",
-        scale: 1,
+        y: 0,
         transition: {
-          type: "spring",
-          stiffness: 220,
-          damping: 24,
-          mass: 0.7,
+          duration: 0.4,
+          ease: "easeOut",
           delay: rm ? 0 : base + rowPad,
         },
       };
@@ -87,7 +79,7 @@ export default function TrainingProjects() {
   };
 
   return (
-    <section id="training-projects" className="py-20 bg-[var(--surface)]">
+    <section id="training-projects" className="py-20 relative">
       <Container>
         <SectionHeader
           title="Training Projects"
@@ -122,11 +114,8 @@ export default function TrainingProjects() {
                   alt={proj.title}
                   className="w-full h-56 object-cover"
                   loading="lazy"
-                  initial={rm ? {} : { scale: 1.015 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  whileHover={rm ? {} : { scale: 1.04 }}
+                  whileHover={rm ? {} : { scale: 1.05 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                 />
               </div>
 

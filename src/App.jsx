@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "./components/layout/Navbar.jsx";
 import Footer from "./components/layout/Footer.jsx";
 
@@ -13,6 +14,7 @@ import Experience from "./components/sections/Experience.jsx";
 import ContentCreator from "./components/sections/ContentCreator.jsx";
 import Awards from "./components/sections/Awards.jsx";
 import LeviChatbot from "./components/chatbot/LeviChatbot.jsx";
+import CommandPalette from "./components/layout/CommandPalette.jsx";
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach((link) => {
   link.addEventListener("click", function (e) {
@@ -28,10 +30,19 @@ links.forEach((link) => {
   });
 });
 export default function App() {
+  const [isPaletteOpen, setPaletteOpen] = useState(false);
+
   return (
     <>
-      <Navbar />
-      <main className="bg-[var(--bg)] text-white">
+      <CommandPalette isOpen={isPaletteOpen} setIsOpen={setPaletteOpen} />
+      <div className="ambient-bg">
+        <div className="bg-aurora a1"></div>
+        <div className="bg-aurora a2"></div>
+        <div className="bg-aurora a3"></div>
+        <div className="bg-grid"></div>
+      </div>
+      <Navbar setPaletteOpen={setPaletteOpen} />
+      <main className="text-white">
         <Hero />
         <TechStack />
         <Services />

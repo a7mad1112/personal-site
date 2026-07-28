@@ -33,7 +33,7 @@ export default function TechStack() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 pb-10">
+    <section id="tech-stack" ref={sectionRef} className="py-20 pb-10">
       <Container>
         <SectionHeader
           kicker="My Tech Stack & Tools"

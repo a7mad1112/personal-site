@@ -4,7 +4,7 @@ import Container from "./Container.jsx";
 import Button from "../ui/Button.jsx";
 import { smoothScrollTo } from "../../utils/scroll.js";
 
-export default function Navbar() {
+export default function Navbar({ setPaletteOpen }) {
   const [active, setActive] = useState("home");
   const isProgrammaticScroll = useRef(false);
 
@@ -113,8 +113,29 @@ export default function Navbar() {
           variants={navContainer}
           initial="hidden"
           animate="visible"
-          className="hidden lg:block"
+          className="hidden lg:flex items-center gap-4"
         >
+          <motion.div variants={fadeUp}>
+            <button 
+              onClick={() => setPaletteOpen(true)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-[var(--border)] bg-[var(--surface)] hover:border-gray-500 transition-colors text-sm text-gray-300 mono"
+            >
+              <span>Search</span>
+              <kbd className="rounded bg-white/10 px-1 font-sans text-xs">⌘K</kbd>
+            </button>
+          </motion.div>
+          
+          <motion.div variants={fadeUp}>
+            <a
+              href="/resume.html"
+              target="_blank"
+              className="inline-flex items-center px-4 py-2 rounded-md bg-[var(--surface)] border border-[var(--border)] hover:border-gray-500 hover:text-white transition-colors text-sm font-medium text-gray-300 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Resume</span>
+              <div className="absolute inset-0 bg-white/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+            </a>
+          </motion.div>
+          
           <motion.div variants={fadeUp}>
             <Button href="#contact" onClick={(e) => handleClick(e, "contact")}>
               Hire Me

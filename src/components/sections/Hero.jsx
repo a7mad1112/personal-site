@@ -5,7 +5,6 @@ import { socials } from "../../data/socials.js";
 import Waves from "../ui/Waves.jsx";
 import ShinyText from "../ui/ShinyText.jsx";
 import TextType from "../ui/TextType.jsx";
-import ProfileCard from "../ui/profileCard/ProfileCard.jsx";
 import { smoothScrollTo } from "../../utils/scroll.js";
 
 export default function Hero() {
@@ -44,7 +43,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] flex items-center"
+      className="relative overflow-hidden min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] flex items-center pt-24 pb-20 md:py-0"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Waves
@@ -70,11 +69,15 @@ export default function Hero() {
           animate="visible"
           className="space-y-5"
         >
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="flex items-center gap-3">
+            <span className="flex h-3 w-3 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[var(--accent)]"></span>
+            </span>
             <ShinyText
-              text="Welcome to my world"
+              text="From Jenin, Palestine 🇵🇸"
               speed={5}
-              className="text-base md:text-lg lg:text-xl font-medium mb-0"
+              className="text-base md:text-lg font-medium mb-0 mono"
               baseClass="text-[var(--muted)]"
             />
           </motion.div>
@@ -85,38 +88,41 @@ export default function Hero() {
           >
             Hello I’m{" "}
             <span className="text-[var(--accent)]">Ahmed Alawneh</span>,<br />
-            <TextType
-              text={[
-                "Front End Developer",
-                "I build beautiful UIs",
-                "Clean code, modern design",
-              ]}
-              typingSpeed={75}
-              deletingSpeed={40}
-              pauseDuration={1500}
-              showCursor
-              startOnVisible
-              cursorCharacter="|"
-              className="text-[var(--accent)] text-2xl lg:text-3xl"
-            />
+            <span className="flex items-center gap-2 text-[var(--accent)] text-2xl lg:text-3xl mono">
+              <span className="text-gray-500 font-bold">$</span>
+              <TextType
+                text={[
+                  "Software Engineer",
+                  "Full Stack Developer",
+                  "Building Digital Solutions",
+                ]}
+                typingSpeed={75}
+                deletingSpeed={40}
+                pauseDuration={1500}
+                showCursor
+                startOnVisible
+                cursorCharacter="▊"
+                className=""
+              />
+            </span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-[var(--muted)] max-w-xl">
-            I create fast, sleek front-end experiences. Let’s build something
-            that actually moves your business.
+          <motion.p variants={fadeUp} className="text-[var(--muted)] max-w-xl text-lg">
+            Results-driven Software Engineer dedicated to developing seamless and efficient digital solutions. Experienced in crafting robust backend systems, APIs, and responsive frontends. Passionate about writing clean, maintainable code, applying design patterns, and utilizing modern deployment frameworks to solve complex problems at scale.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-            <Button href="#contact">Let’s Work Together</Button>
-            <Button
-              as="a"
-              href="https://docs.google.com/document/d/1YN-oLrw7Nz2QLTl6bLATPfwdZqiUGRw_/edit"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline"
-            >
-              View Resume
+          <motion.div variants={fadeUp} className="flex flex-wrap gap-4 items-center">
+            <Button href="#projects" onClick={(e) => smoothScrollTo(document.getElementById("client-projects")?.offsetTop || 0, 1000, 70)}>
+              Explore my work
             </Button>
+            <a
+              href="/resume.html"
+              target="_blank"
+              className="group relative px-6 py-2.5 rounded bg-transparent text-white font-medium hover:text-[var(--accent)] transition-colors overflow-hidden border border-[var(--border)] hover:border-[var(--accent)] inline-flex items-center justify-center"
+            >
+              <span className="relative z-10 mono">Resume</span>
+              <div className="absolute inset-0 bg-white/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+            </a>
           </motion.div>
 
           <motion.div
@@ -146,46 +152,68 @@ export default function Hero() {
             variants={float}
             initial="initial"
             animate="animate"
-            whileHover="whileHover"
+            className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center"
           >
-            <ProfileCard
-              name="Ahmed Alawneh"
-              title="Front End Developer"
-              handle="a7mad1112"
-              status="Available"
-              contactText="Hire Me"
-              avatarUrl="/me.svg"
-              miniAvatarUrl="/me.svg"
-              showUserInfo
-              enableTilt
-              enableMobileTilt={false}
-              showBehindGradient={false}
-              innerGradient={`linear-gradient(145deg, rgba(22,22,22,.95) 0%, rgba(255,145,77,.08) 100%)`}
-              className="pc-theme-orng w-full max-w-[20rem] sm:max-w-[22rem] md:max-w-[24rem]"
-              onContactClick={() => {
-                const el = document.getElementById("contact");
-                if (el) smoothScrollTo(el.offsetTop, 1000, 70);
-              }}
-            />
+            {/* Glowing background blob */}
+            <div className="absolute inset-0 bg-[var(--accent)] opacity-20 blur-3xl rounded-full transform -translate-y-4 translate-x-4 mix-blend-screen"></div>
+            
+            {/* Main image container */}
+            <div className="relative w-full h-full rounded-2xl lg:rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl z-10 group bg-black/40 backdrop-blur-sm p-2">
+              <div className="relative w-full h-full rounded-xl lg:rounded-[1.5rem] overflow-hidden border border-[var(--border)]">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-10"></div>
+                
+                {/* Subtle colored overlay that disappears on hover */}
+                <div className="absolute inset-0 bg-[var(--accent)]/10 mix-blend-overlay z-20 group-hover:opacity-0 transition-opacity duration-700"></div>
+                
+                <img 
+                  src="/Ahmed.jpg" 
+                  alt="Ahmed Alawneh"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+              </div>
+            </div>
+
+            {/* Floating decorative elements */}
+            <div className="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 z-30 p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 shadow-xl flex items-center gap-3">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span>
+              <span className="text-sm font-medium text-white tracking-wide">Available for Work</span>
+            </div>
+            
+            <div className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6 z-30 p-3 rounded-lg bg-black/40 backdrop-blur-md border border-white/10 shadow-xl">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
           </motion.div>
         </motion.div>
       </Container>
       {!rm && (
-        <motion.div
-          aria-hidden
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[var(--muted)]"
+        <motion.button
+          onClick={() => {
+            const target = document.getElementById("tech-stack");
+            if (target) {
+              smoothScrollTo(target.offsetTop - 60, 1000, 70);
+            }
+          }}
+          aria-label="Scroll down"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[var(--muted)] hover:text-[var(--accent)] transition-colors duration-300 cursor-pointer p-2 flex flex-col items-center gap-2 group"
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 0.8, y: 0 }}
           transition={{ delay: 1.2, duration: 0.5, ease: "easeOut" }}
         >
-          <motion.span
+          <span className="text-[10px] tracking-[0.2em] uppercase font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0">Scroll</span>
+          <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-block"
+            className="w-6 h-9 border-2 border-current rounded-full flex justify-center pt-2"
           >
-            ↓
-          </motion.span>
-        </motion.div>
+            <div className="w-1 h-2 bg-current rounded-full" />
+          </motion.div>
+        </motion.button>
       )}
     </section>
   );

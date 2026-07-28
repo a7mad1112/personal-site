@@ -37,7 +37,7 @@ export default function ContentCreator() {
   ));
 
   return (
-    <section id="content" className="py-20 bg-[var(--surface)]">
+    <section id="content" className="py-20 relative">
       <Container>
         <motion.div
           variants={fadeUp}

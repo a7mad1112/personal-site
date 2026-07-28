@@ -189,9 +189,8 @@ export default function Experience() {
           <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
             Experience
           </h2>
-          <p className="mt-2 text-sm md:text-base text-white/70">
-            Teaching, training, and hands-on development — highlighting my key
-            professional milestones from the most recent to the earliest.
+          <p className="mt-2 text-sm md:text-base text-white/70 max-w-2xl">
+            My journey from Full Stack training to teaching and mentoring other developers. Highlighting key professional milestones in building robust backend systems, APIs, and responsive frontends.
           </p>
         </div>
 

@@ -1,5 +1,17 @@
 export const experiences = [
   {
+    id: "e0",
+    title: "Backend Intern",
+    company: "Foothill Technology Solutions",
+    date: "Jun 2026 – Present",
+    description: "Developed backend services using .NET and C#, applying design patterns to deliver clean, scalable, and efficient code.",
+    achievements: [
+      "Designed RESTful APIs and established secure database connections",
+      "Actively supported troubleshooting, debugging, and system optimizations"
+    ],
+    type: "Internship",
+  },
+  {
     id: "e1",
     title: "Front-End Instructor (IEEE AAUP)",
     company: "IEEE Student Branch – Arab American University",

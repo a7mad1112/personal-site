@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Ahmed Alawneh</title>
+  <meta name="description" content="Resume of Ahmed Alawneh — Software Engineer." />
+  <link rel="icon" type="image/svg+xml" href="tab-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #16192a;
+      --soft: #4b5268;
+      --faint: #8a91a6;
+      --accent: #ff6a00;
+      --accent2: #ff914d;
+      --line: #e4e7f0;
+      --chipbg: #f3f5fb;
+      --grad: linear-gradient(100deg, #ff6a00, #ff914d);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #eef0f6;
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 14.2px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .mono { font-family: "JetBrains Mono", monospace; }
+
+    /* Toolbar */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px clamp(16px, 4vw, 40px);
+      background: #0a0f1e;
+      color: #e8ecf8;
+    }
+    .toolbar a, .toolbar button {
+      font: 600 13.5px "Inter", sans-serif;
+      color: #e8ecf8;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 9px 18px;
+      border-radius: 9px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .toolbar a:hover, .toolbar button:hover { background: rgba(255, 255, 255, 0.16); transform: translateY(-1px); }
+    .toolbar .dl { background: var(--grad); border: 0; }
+    .toolbar-note { font-size: 12px; color: #93a0ba; }
+
+    /* Page */
+    .page {
+      max-width: 850px;
+      margin: 28px auto 60px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 24px 70px rgba(20, 25, 55, 0.16);
+      padding: clamp(30px, 5vw, 56px);
+    }
+
+    header.hd { border-bottom: 3px solid; border-image: var(--grad) 1; padding-bottom: 22px; margin-bottom: 26px; }
+    h1 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(30px, 5vw, 40px);
+      letter-spacing: -0.02em;
+      margin: 0 0 4px;
+    }
+    .hd-title { font-size: 16.5px; font-weight: 600; color: var(--accent); margin: 0 0 12px; }
+    .hd-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 12.8px;
+      color: var(--soft);
+    }
+    .hd-contacts a { color: var(--soft); text-decoration: none; }
+    .hd-contacts a:hover { color: var(--accent); }
+
+    h2 {
+      font-family: "Sora", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 28px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+    .summary { color: var(--soft); font-size: 14.6px; }
+
+    /* Experience */
+    .job { margin-bottom: 20px; break-inside: avoid; }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .job-head h3 { font-family: "Sora", sans-serif; font-size: 16px; margin: 0; }
+    .job-org { font-weight: 600; color: var(--accent2); font-size: 13.5px; }
+    .job-date { font-size: 12px; color: var(--faint); white-space: nowrap; }
+    .job p { margin: 6px 0 8px; color: var(--soft); }
+    .job ul { margin: 6px 0 0; padding-left: 18px; color: var(--soft); }
+    .job li { margin-bottom: 4px; }
+    
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px;}
+    .chips span {
+      font-size: 12px;
+      font-weight: 500;
+      background: var(--chipbg);
+      border: 1px solid var(--line);
+      color: var(--soft);
+      padding: 4px 11px;
+      border-radius: 7px;
+    }
+    
+    .skill-row { display: grid; grid-template-columns: 150px 1fr; gap: 12px; margin-bottom: 9px; align-items: baseline; }
+    .skill-row b { font-size: 12.5px; color: var(--ink); }
+    .skill-row span { color: var(--soft); font-size: 13.5px; }
+
+    @media print {
+      body { background: #fff; font-size: 12px; }
+      .toolbar { display: none; }
+      .page { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <div style="display:flex; gap:12px; align-items:center;">
+      <a href="/">&larr; Back to Portfolio</a>
+      <span class="toolbar-note mono hidden-mobile">resume.pdf</span>
+    </div>
+    <div style="display:flex; gap:12px;">
+      <a class="dl" href="https://docs.google.com/document/d/1whDSHLMKEmBxirfH6rnyjVMPPlxra9BV/edit?usp=sharing" target="_blank" rel="noopener">Open Google Doc</a>
+      <button onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="page">
+    <header class="hd">
+      <h1>Ahmed Alawneh</h1>
+      <div class="hd-title">Software Engineer</div>
+      <div class="hd-contacts">
+        <a href="mailto:alawnehahmed45@gmail.com">alawnehahmed45@gmail.com</a>
+        <a href="https://github.com/AhmedAlawneh" target="_blank">github.com/AhmedAlawneh</a>
+        <a href="https://www.linkedin.com/in/ahmedalawneh" target="_blank">linkedin.com/in/ahmedalawneh</a>
+        <a href="https://ahmedalawneh.me" target="_blank">ahmedalawneh.me</a>
+        <span>(+970) 59 580-9023</span>
+        <span>Palestine, Jenin</span>
+      </div>
+    </header>
+
+    <h2>Summary</h2>
+    <p class="summary">
+      Results-driven Software Engineer dedicated to developing seamless and efficient digital solutions. Experienced in crafting robust backend systems, APIs, and responsive frontends. Passionate about writing clean, maintainable code, applying design patterns, and utilizing modern deployment frameworks to solve complex problems at scale.
+    </p>
+
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="job-head">
+        <h3>Backend Intern</h3>
+        <span class="job-date mono">Jun 2026 – Present</span>
+      </div>
+      <div class="job-org">Foothill Technology Solutions &middot; On-site</div>
+      <p>Developed backend services using .NET and C#, applying design patterns to deliver clean, scalable, and efficient code.</p>
+      <ul>
+        <li>Designed RESTful APIs and established secure database connections, actively supporting troubleshooting, debugging, and system optimizations.</li>
+      </ul>
+    </div>
+    
+    <div class="job">
+      <div class="job-head">
+        <h3>Frontend Engineer</h3>
+        <span class="job-date mono">May 2025 – Nov 2025</span>
+      </div>
+      <div class="job-org">Smart Farm Management System &middot; Remote</div>
+      <p>Led the frontend development of a smart farm management platform, ensuring a responsive, user-friendly interface supporting multiple user roles.</p>
+      <ul>
+        <li>Collaborated with cross-functional teams and backend developers to align API integrations, ensuring smooth data workflows and system maintainability.</li>
+      </ul>
+    </div>
+    
+    <div class="job">
+      <div class="job-head">
+        <h3>React Instructor</h3>
+        <span class="job-date mono">Sep 2024 – Dec 2024</span>
+      </div>
+      <div class="job-org">PalSoft Technology Solutions &middot; Remote</div>
+      <p>Trained interns on advanced React concepts and best development practices.</p>
+      <ul>
+        <li>Led hands-on projects across core frontend topics (authentication, state, routing, data), using modular API service layers to deliver maintainable admin tools.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Frontend Intern</h3>
+        <span class="job-date mono">Mar 2023 – Jul 2023</span>
+      </div>
+      <div class="job-org">Foothill Technology Solutions &middot; Hybrid</div>
+      <p>Completed an intensive React internship, used Git/GitHub, React+TypeScript, testing, and design patterns while practicing API integration, routing, and state management in production-like tasks.</p>
+      <ul>
+        <li>Built and deployed multiple projects, including Shopping Hup and POS System.</li>
+      </ul>
+    </div>
+    
+    <div class="job">
+      <div class="job-head">
+        <h3>JavaScript Co-Instructor</h3>
+        <span class="job-date mono">Aug 2023 – Sep 2023</span>
+      </div>
+      <div class="job-org">IEEE & Gaza Sky Geeks &middot; Hybrid</div>
+      <p>Delivered a 32-hour JavaScript training (ES6+ & DOM) to 30+ students with practical exercises.</p>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="job">
+      <div class="job-head">
+        <h3>Webhook Engine</h3>
+      </div>
+      <div class="job-org">Full-Stack Event-Driven Platform</div>
+      <ul>
+        <li>A full-stack event-driven platform (Express, React, PostgreSQL) for webhook routing and real-time monitoring.</li>
+        <li>Features AI debugging, async background queues (pg-boss), and rate limiting. Containerized with Docker for reliable production deployments.</li>
+      </ul>
+      <div class="chips">
+        <span>Express</span>
+        <span>React</span>
+        <span>PostgreSQL</span>
+        <span>Docker</span>
+        <span>AI</span>
+      </div>
+    </div>
+
+    <h2>Skills</h2>
+    <div class="skill-row">
+      <b>Languages</b>
+      <span>C#, TypeScript, JavaScript, SQL</span>
+    </div>
+    <div class="skill-row">
+      <b>Frameworks & Libs</b>
+      <span>.NET, React, Next.js, Tailwind CSS, MUI, React Query, Redux Toolkit, Zustand, Express.js</span>
+    </div>
+    <div class="skill-row">
+      <b>Databases</b>
+      <span>PostgreSQL, MongoDB</span>
+    </div>
+    <div class="skill-row">
+      <b>Tools & Other</b>
+      <span>Docker, Git & GitHub, Postman, RESTful APIs, Design Patterns, React Testing, Figma</span>
+    </div>
+
+    <h2>Education</h2>
+    <div class="job">
+      <div class="job-head">
+        <h3>BSc in Computer Systems Engineering</h3>
+        <span class="job-date mono">2021 – 2026</span>
+      </div>
+      <div class="job-org">Arab American University, Palestine, Jenin</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
