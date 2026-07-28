@@ -39,7 +39,7 @@ export default function Testimonials() {
         <Container>
           <SectionHeader
             title="Testimonials"
-            subtitle="Here is what my clients say about me"
+            subtitle="Here is what people say about working with me"
           />
           <div className="mt-10">
             <Swiper
