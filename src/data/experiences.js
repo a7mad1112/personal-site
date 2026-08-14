@@ -1,13 +1,15 @@
 export const experiences = [
   {
     id: "e0",
-    title: "Backend Intern",
+    title: "Paid Backend Intern",
     company: "Foothill Technology Solutions",
     date: "Jun 2026 – Present",
-    description: "Developed backend services using .NET and C#, applying design patterns to deliver clean, scalable, and efficient code.",
+    description: "Completed an intensive paid backend internship focused on enterprise-grade software architecture, advanced database engineering, and modern API development using C# and .NET.",
     achievements: [
-      "Designed RESTful APIs and established secure database connections",
-      "Actively supported troubleshooting, debugging, and system optimizations"
+      "Mastered software architecture fundamentals, including Clean Code, SOLID principles, Design Patterns, Dependency Injection, and Domain-Driven Design (DDD).",
+      "Deepened expertise in database engineering, covering RDBMS internals, indexing, partitioning, sharding, replication, and advanced T-SQL (CTEs, Window Functions).",
+      "Studied distributed systems concepts, analyzing the CAP Theorem, ACID vs BASE, transaction isolation levels, and NoSQL databases.",
+      "Explored modern API development (RESTful, GraphQL, gRPC) alongside various data access strategies (EF Core, Dapper) and CQRS/CQS."
     ],
     type: "Internship",
   },
