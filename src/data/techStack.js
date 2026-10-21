@@ -38,6 +38,11 @@ export const techStack = [
   },
   { name: "ViteJS", path: "tech-stack/vitejs.svg", href: "https://vitejs.dev" },
   {
+    name: ".NET Core",
+    path: "tech-stack/dotnet.svg",
+    href: "https://dotnet.microsoft.com",
+  },
+  {
     name: "Node.js",
     path: "tech-stack/nodejs.svg",
     href: "https://nodejs.org",
