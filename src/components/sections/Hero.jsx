@@ -47,7 +47,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Waves
-          lineColor="rgba(255,145,77,0.15)"
+          lineColor="rgba(255,145,77,0.13)"
           backgroundColor="transparent"
           waveSpeedX={0.012}
           waveSpeedY={0.006}
@@ -60,7 +60,7 @@ export default function Hero() {
           maxCursorMove={80}
           className="w-full h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/25" />
       </div>
       <Container className="relative z-10 grid md:grid-cols-2 items-center gap-10">
         <motion.div
@@ -74,12 +74,15 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[var(--accent)]"></span>
             </span>
-            <ShinyText
-              text="From Jenin, Palestine 🇵🇸"
-              speed={5}
-              className="text-base md:text-lg font-medium mb-0 mono"
-              baseClass="text-[var(--muted)]"
-            />
+            <div className="flex items-center gap-1.5 text-base md:text-lg font-medium mb-0 mono">
+              <ShinyText
+                text="From Jenin, Palestine"
+                speed={5}
+                className="mb-0"
+                baseClass="text-[var(--muted)]"
+              />
+              <span className="select-none">🇵🇸</span>
+            </div>
           </motion.div>
 
           <motion.h1
@@ -107,12 +110,12 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-[var(--muted)] max-w-xl text-lg">
-            Results-driven Software Engineer dedicated to developing seamless and efficient digital solutions. Experienced in crafting robust backend systems, APIs, and responsive frontends. Passionate about writing clean, maintainable code, applying design patterns, and utilizing modern deployment frameworks to solve complex problems at scale.
+          <motion.p variants={fadeUp} className="text-white/70 max-w-xl text-base sm:text-lg leading-relaxed">
+            Software Engineer specializing in robust backend systems, scalable APIs, and clean responsive frontends. Passionate about crafting maintainable architecture and intuitive digital products.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4 items-center">
-            <Button href="#projects" onClick={(e) => smoothScrollTo(document.getElementById("client-projects")?.offsetTop || 0, 1000, 70)}>
+            <Button href="#projects" onClick={() => smoothScrollTo(document.getElementById("projects")?.offsetTop || 0, 1000, 70)}>
               Explore my work
             </Button>
             <a
@@ -154,39 +157,26 @@ export default function Hero() {
             animate="animate"
             className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center"
           >
-            {/* Glowing background blob */}
-            <div className="absolute inset-0 bg-[var(--accent)] opacity-20 blur-3xl rounded-full transform -translate-y-4 translate-x-4 mix-blend-screen"></div>
+            {/* Soft ambient background glow */}
+            <div className="absolute inset-4 bg-[var(--accent)]/15 opacity-80 blur-3xl rounded-full transform mix-blend-screen pointer-events-none"></div>
             
-            {/* Main image container */}
-            <div className="relative w-full h-full rounded-2xl lg:rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl z-10 group bg-black/40 backdrop-blur-sm p-2">
-              <div className="relative w-full h-full rounded-xl lg:rounded-[1.5rem] overflow-hidden border border-[var(--border)]">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-10"></div>
-                
-                {/* Subtle colored overlay that disappears on hover */}
-                <div className="absolute inset-0 bg-[var(--accent)]/10 mix-blend-overlay z-20 group-hover:opacity-0 transition-opacity duration-700"></div>
-                
-                <img 
-                  src="/Ahmed.jpg" 
-                  alt="Ahmed Alawneh"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
-                />
-              </div>
+            {/* Streamlined main photo container */}
+            <div className="relative w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden ring-1 ring-white/15 shadow-2xl bg-black/40 backdrop-blur-sm group">
+              <img 
+                src="/Ahmed.jpg" 
+                alt="Ahmed Alawneh"
+                className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
             </div>
 
-            {/* Floating decorative elements */}
-            <div className="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 z-30 p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 shadow-xl flex items-center gap-3">
-              <span className="relative flex h-3 w-3">
+            {/* Available for Work floating badge */}
+            <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 z-20 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl flex items-center gap-2.5">
+              <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-sm font-medium text-white tracking-wide">Available for Work</span>
-            </div>
-            
-            <div className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6 z-30 p-3 rounded-lg bg-black/40 backdrop-blur-md border border-white/10 shadow-xl">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
+              <span className="text-xs sm:text-sm font-medium text-white tracking-wide">Available for Work</span>
             </div>
           </motion.div>
         </motion.div>
