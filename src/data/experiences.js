@@ -1,30 +1,79 @@
 export const experiences = [
   {
-    id: "e0",
-    title: "Paid Backend Intern",
+    id: "eg0",
+    isGroup: true,
     company: "Foothill Technology Solutions",
-    date: "Jun 2026 – Present",
-    description: "Completed an intensive paid backend internship focused on enterprise-grade software architecture, advanced database engineering, and modern API development using C# and .NET.",
-    achievements: [
-      "Mastered software architecture fundamentals, including Clean Code, SOLID principles, Design Patterns, Dependency Injection, and Domain-Driven Design (DDD).",
-      "Deepened expertise in database engineering, covering RDBMS internals, indexing, partitioning, sharding, replication, and advanced T-SQL (CTEs, Window Functions).",
-      "Studied distributed systems concepts, analyzing the CAP Theorem, ACID vs BASE, transaction isolation levels, and NoSQL databases.",
-      "Explored modern API development (RESTful, GraphQL, gRPC) alongside various data access strategies (EF Core, Dapper) and CQRS/CQS."
+    logo: "/companies/foothill.png",
+    totalDuration: "9 mos",
+    roles: [
+      {
+        id: "e0a",
+        title: "Junior Software Engineer",
+        employmentType: "Full-time",
+        date: "Oct 2026 – Present",
+        duration: "1 mo",
+        location: "Ramallah, West Bank · Hybrid",
+        description:
+          "Transitioned from Software Engineering Intern to Junior Software Engineer. Currently working with Elixir and Phoenix, building scalable backend systems and continuing to develop my skills in software development and engineering practices.",
+        achievements: [
+          "Promoted to Junior Software Engineer following successful completion of internship and training.",
+          "Working with Elixir and Phoenix framework for building scalable, fault-tolerant backend systems.",
+          "Contributing to maintainable software development and production engineering practices.",
+          "Collaborating across cross-functional teams to build resilient backend services and APIs.",
+        ],
+        type: "Full-time",
+        isCurrent: true,
+      },
+      {
+        id: "e0b",
+        title: "Software Engineer Intern",
+        employmentType: "Internship",
+        date: "Jun 2026 – Sep 2026",
+        duration: "4 mos",
+        location: "Nablus, Palestine · On-site",
+        description:
+          "Completed an intensive paid backend internship focused on enterprise-grade software architecture, advanced database engineering, and modern API development using C# and .NET.",
+        achievements: [
+          "Mastered software architecture fundamentals, including Clean Code, SOLID principles, Design Patterns, Dependency Injection, and Domain-Driven Design (DDD).",
+          "Deepened expertise in database engineering, covering RDBMS internals, indexing, partitioning, sharding, replication, and advanced T-SQL (CTEs, Window Functions).",
+          "Studied distributed systems concepts, analyzing the CAP Theorem, ACID vs BASE, transaction isolation levels, and NoSQL databases.",
+          "Explored modern API development (RESTful, GraphQL, gRPC) alongside various data access strategies (EF Core, Dapper) and CQRS/CQS.",
+        ],
+        type: "Internship",
+      },
+      {
+        id: "e0c",
+        title: "Backend Developer Trainee",
+        employmentType: "Internship",
+        date: "Feb 2026 – May 2026",
+        duration: "4 mos",
+        location: "Palestinian Authority · Remote",
+        description:
+          "Completed a Backend Training Program at Foothill Technology Solutions, focused on backend development fundamentals, TypeScript, databases, APIs, Docker, CI/CD, and project-based learning.",
+        achievements: [
+          "Worked through practical backend topics including Git, TypeScript, HTTP clients, SQL, HTTP servers, Docker, GitHub Actions, and CI/CD workflows.",
+          "Completed hands-on projects such as building a Pokedex in TypeScript, a blog aggregator, and a final backend project.",
+          "Strengthened understanding of server-side development, API design, database interaction, clean code, deployment workflows, and building maintainable backend applications.",
+        ],
+        type: "Internship",
+      },
     ],
-    type: "Internship",
   },
   {
     id: "e1",
     title: "Front-End Instructor (IEEE AAUP)",
     company: "IEEE Student Branch – Arab American University",
+    logo: "/companies/ieee.svg",
+    employmentType: "Part-time",
     date: "June 2025",
-    description: `
-  Led a Front-End Basics training focusing on modern HTML & CSS: semantics, accessibility, responsive layouts, Flexbox & Grid, and clean component-level styling. Guided students to build polished, production-like pages and get ready for freelancing fundamentals.
-  `,
+    duration: "1 mo",
+    location: "Jenin, Palestine · On-site",
+    description:
+      "Led a Front-End Basics training focusing on modern HTML & CSS: semantics, accessibility, responsive layouts, Flexbox & Grid, and clean component-level styling. Guided students to build polished, production-like pages and get ready for freelancing fundamentals.",
     achievements: [
-      "Designed a structured HTML/CSS learning track tailored for university students",
-      "Delivered hands-on workshops building responsive, accessible pages",
-      "Mentored participants on portfolios, presentation, and freelancing basics",
+      "Designed a structured HTML/CSS learning track tailored for university students.",
+      "Delivered hands-on workshops building responsive, accessible pages.",
+      "Mentored participants on portfolios, presentation, and freelancing basics.",
     ],
     type: "Teaching",
     feedbacks: [
@@ -39,14 +88,17 @@ export const experiences = [
     id: "e2",
     title: "React Instructor (Advanced React Training)",
     company: "PalSoft Technology Solutions",
+    logo: "/companies/palsoft.png",
+    employmentType: "Part-time",
     date: "September 2024",
-    description: `
-    Led an advanced React.js training program for interns and junior developers at PalSoft Technology Solutions. The training focused on performance optimization, React Query, custom hooks, and Clean Architecture integration.
-    `,
+    duration: "1 mo",
+    location: "Nablus, Palestine · On-site",
+    description:
+      "Led an advanced React.js training program for interns and junior developers at PalSoft Technology Solutions. The training focused on performance optimization, React Query, custom hooks, and Clean Architecture integration.",
     achievements: [
-      "Taught advanced component patterns and React Query integration",
-      "Introduced real-world project workflows using API services and MUI",
-      "Guided participants through building scalable dashboards and admin panels",
+      "Taught advanced component patterns and React Query integration.",
+      "Introduced real-world project workflows using API services and MUI.",
+      "Guided participants through building scalable dashboards and admin panels.",
     ],
     type: "Teaching",
   },
@@ -54,15 +106,18 @@ export const experiences = [
     id: "e3",
     title: "JavaScript Instructor",
     company: "IEEE AAUP & Gaza Sky Geeks",
+    logo: "/companies/gazaskygeeks.svg",
+    employmentType: "Contract",
     date: "August 2023 – January 2026",
-    description: `
-    Designed and delivered a high-impact JavaScript curriculum for two separate bootcamps, mentoring over 60 students in total. The training emphasizes ES6+ mastery, asynchronous programming, and DOM manipulation, bridging the gap between basic syntax and professional front-end logic.
-    `,
+    duration: "2 yrs 6 mos",
+    location: "Palestine · Hybrid",
+    description:
+      "Designed and delivered a high-impact JavaScript curriculum for two separate bootcamps, mentoring over 60 students in total. The training emphasizes ES6+ mastery, asynchronous programming, and DOM manipulation, bridging the gap between basic syntax and professional front-end logic.",
     achievements: [
-      "Successfully trained 60+ students across two intensive cohorts (30+ students per bootcamp)",
-      "Developed a project-based syllabus focusing on ES6+, API integration, and clean code principles",
-      "Collaborated with Gaza Sky Geeks and IEEE mentors to evaluate student performance and logic building",
-      "Facilitated hands-on coding challenges that improved participants' problem-solving speed",
+      "Successfully trained 60+ students across two intensive cohorts (30+ students per bootcamp).",
+      "Developed a project-based syllabus focusing on ES6+, API integration, and clean code principles.",
+      "Collaborated with Gaza Sky Geeks and IEEE mentors to evaluate student performance and logic building.",
+      "Facilitated hands-on coding challenges that improved participants' problem-solving speed.",
     ],
     type: "Teaching",
   },
@@ -70,14 +125,17 @@ export const experiences = [
     id: "e4",
     title: "Frontend Intern",
     company: "Foothill Technology Solutions, LLC",
+    logo: "/companies/foothill.png",
+    employmentType: "Internship",
     date: "March 2023 – July 2023",
-    description: `
-    Completed a transformative front-end internship focused on React development. Gained hands-on experience through project-based learning, UI implementation, and performance optimization.
-    `,
+    duration: "5 mos",
+    location: "Nablus, Palestine · On-site",
+    description:
+      "Completed a transformative front-end internship focused on React development. Gained hands-on experience through project-based learning, UI implementation, and performance optimization.",
     achievements: [
-      "Built multiple responsive web projects using React and modern CSS",
-      "Applied API integration, state management, and routing techniques",
-      "Received a completion certificate for outstanding performance",
+      "Built multiple responsive web projects using React and modern CSS.",
+      "Applied API integration, state management, and routing techniques.",
+      "Received a completion certificate for outstanding performance.",
     ],
     certificate:
       "https://drive.google.com/file/d/1_jvuCFuYi2cXLvQj8cBTxmRZpAgnY-mj/view",

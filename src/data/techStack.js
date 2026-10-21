@@ -68,4 +68,14 @@ export const techStack = [
     href: "https://www.notion.so",
   },
   { name: "PugJS", path: "tech-stack/pugjs.svg", href: "https://pugjs.org" },
+  {
+    name: "Elixir",
+    path: "tech-stack/elixir.svg",
+    href: "https://elixir-lang.org",
+  },
+  {
+    name: "Phoenix",
+    path: "tech-stack/phoenix.svg",
+    href: "https://www.phoenixframework.org",
+  },
 ];
