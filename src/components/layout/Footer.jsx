@@ -35,8 +35,8 @@ export default function Footer() {
               <img src="logo.svg" alt="Logo" className="h-8 w-auto" />
             </a>
             <p className="text-sm text-[var(--muted)] max-w-xs">
-              Front-end engineer crafting fast, accessible, and beautiful web
-              experiences with React, TypeScript, and modern UI systems.
+              Software engineer crafting robust backend systems, scalable APIs,
+              and modern, performant web applications.
             </p>
 
             {Array.isArray(socials) && socials.length > 0 && (
