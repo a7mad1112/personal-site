@@ -5,11 +5,9 @@ import Footer from "./components/layout/Footer.jsx";
 import Hero from "./components/sections/Hero.jsx";
 import TechStack from "./components/sections/TechStack.jsx";
 import Services from "./components/sections/Services.jsx";
-import SeniorProject from "./components/sections/SeniorProject.jsx";
+import Projects from "./components/sections/Projects.jsx";
 import Testimonials from "./components/sections/Testimonials.jsx";
 import Contact from "./components/sections/Contact.jsx";
-import ClientProjects from "./components/sections/ClientProjects.jsx";
-import TrainingProjects from "./components/sections/TrainingProjects.jsx";
 import Experience from "./components/sections/Experience.jsx";
 import ContentCreator from "./components/sections/ContentCreator.jsx";
 import Awards from "./components/sections/Awards.jsx";
@@ -48,9 +46,7 @@ export default function App() {
         <Services />
         <Experience />
         <Awards />
-        <ClientProjects />
-        <SeniorProject />
-        <TrainingProjects />
+        <Projects />
         <Testimonials />
         <ContentCreator />
         <Contact />
