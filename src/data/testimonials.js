@@ -24,14 +24,6 @@ export const testimonials = [
     dir: "ltr",
   },
   {
-    name: "Ghaida Ja'aysah",
-    role: "Front-End Instructor & Teaching Partner",
-    feedback:
-      "أحمد من الأشخاص الموهوبين الي قابلتهم ، انسان ناجح طموح مثابر، عنده حس إبداعي و فني عالي، مبرمج محترف و متمكن جداً في مجاله، اشتغلت معه بدورة HTML & CSS، و كان مدرب معطاء جداً، عنده قدرة عالية على توصيل الأفكار بشكل سلسل و منظم، و عنده خلفية قوية في المجال و قابلية للتعلم المستمر، إنسان بسعى للأفضل و هو يستحق الأفضل.",
-    image: "testimonials/user-profile.png",
-    dir: "rtl",
-  },
-  {
     name: "Dalia Alawneh",
     role: "Frontend Engineer , Foothill Technology Solutions",
     feedback:
